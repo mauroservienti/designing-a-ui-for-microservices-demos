@@ -18,6 +18,9 @@ To run this sample ensure that the following projects are set as startup project
 
 As client to test the funzionality a REST client such as [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) can be used.
 
+* `ASP.Net Core API Gateway - 01` demoes how single items composition works
+* `ASP.Net Core API Gateway - 02` demoes how single items and items list composition works
+
 ## ASP.Net Mvc Core - Demo
 
 ### Divergent.Frontend
