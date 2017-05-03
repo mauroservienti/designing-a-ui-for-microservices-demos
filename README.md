@@ -1,6 +1,6 @@
 # Designing a UI for Microservices - Demos
 
-This repository contains all the demos run during the DDD SouthWest 2017 event
+This repository contains all the demos run during the [DDD SouthWest 2017 event](http://milestone.topics.it/events/ddd-south-west.html).
 
 ## ASP.Net Core API Gateway - demo
 
