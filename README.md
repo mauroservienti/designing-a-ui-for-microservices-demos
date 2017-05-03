@@ -8,7 +8,9 @@ The `ASP.Net Core API Gateway` solution demoes UI Composition techniques built o
 
 ### Divergent.CompositionGateway
 
-`Divergent.CompositionGateway` shows how to create and host a .Net Core API Gateway, or reverse proxy, that composes http requests to multiple API backends. To run this sample ensure that the following projects are set as startup projects:
+`Divergent.CompositionGateway` shows how to create and host a .Net Core API Gateway, or reverse proxy, that composes http requests to multiple API backends.
+
+To run this sample ensure that the following projects are set as startup projects:
 
 * `Divergent.Sales.API.Host`
 * `Divergent.Shipping.API.Host`
@@ -20,7 +22,21 @@ As client to test the funzionality a REST client such as [Postman](https://chrom
 
 ### Divergent.Frontend
 
-`Divergent.Frontend` sample is a .Net Core Mvc app that composes http requests to multiple backends directly in Mvc Views as Controllers are invoked.  To run this sample ensure that the following projects are set as startup projects:
+`Divergent.Frontend` sample is a .Net Core Mvc app that composes http requests to multiple backends directly in Mvc Views as Controllers are invoked. This demo implements ViewModel Composition concepts introducing the concept of Branding as a contract at the UI level.
+
+To run this sample ensure that the following projects are set as startup projects:
+
+* `Divergent.Sales.API.Host`
+* `Divergent.Shipping.API.Host`
+* `Divergent.Frontend`
+
+## ASP.Net Mvc Core UI Composition - Demo
+
+### Divergent.Frontend
+
+`Divergent.Frontend` sample is a .Net Core Mvc app that composes http requests to multiple backends directly in Mvc Views as Controllers are invoked.  This demo implements ViewModel and UI Composition concepts.
+
+To run this sample ensure that the following projects are set as startup projects:
 
 * `Divergent.Sales.API.Host`
 * `Divergent.Shipping.API.Host`
