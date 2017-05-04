@@ -3,8 +3,8 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Order</th>
-            <th>Shipment status</th>
+            @await Component.InvokeAsync("Divergent.Sales.ViewComponents.OrdersListHeader")
+            @await Component.InvokeAsync("Divergent.Shipping.ViewComponents.OrdersListHeader")
         </tr>
     </thead>
     <tbody>
@@ -12,8 +12,8 @@
         @foreach (dynamic order in Model.OrdersViewModel.Values)
         {
             <tr>
-                <td><a href="/Orders/Details/@order.OrderNumber">Number: #@order.OrderNumber</a></td>
-                <td>@order.ShippingStatus</td>
+                @await Component.InvokeAsync("Divergent.Sales.ViewComponents.OrdersList", order)
+                @await Component.InvokeAsync("Divergent.Shipping.ViewComponents.OrdersList", order)
             </tr>
 
         }

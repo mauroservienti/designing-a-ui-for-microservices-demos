@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Views\Shared\Components\OrderDetails\Default.cshtml" />
+    <EmbeddedResource Include="Views\Shared\Components\OrdersListHeader\Default.cshtml" />
+    <EmbeddedResource Include="Views\Shared\Components\OrdersList\Default.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
