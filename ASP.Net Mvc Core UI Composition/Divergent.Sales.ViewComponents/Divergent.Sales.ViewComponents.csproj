@@ -9,22 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Views\Shared\Components\OrderDetails\Default.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Views\Shared\Components\OrderDetailsHeader\Default.cshtml" />
-    <EmbeddedResource Include="Views\Shared\Components\OrderDetails\Default.cshtml" />
-    <EmbeddedResource Include="Views\Shared\Components\OrdersListHeader\Default.cshtml" />
-    <EmbeddedResource Include="Views\Shared\Components\OrdersList\Default.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ITOps.UIComposition.Mvc\ITOps.UIComposition.Mvc.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <EmbeddedResource Include="Views/**/*.cshtml" />
   </ItemGroup>
 
 </Project>

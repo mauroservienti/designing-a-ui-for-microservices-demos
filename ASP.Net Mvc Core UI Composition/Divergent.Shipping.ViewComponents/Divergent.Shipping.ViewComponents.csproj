@@ -5,9 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Views\Shared\Components\OrderDetails\Default.cshtml" />
-    <EmbeddedResource Include="Views\Shared\Components\OrdersListHeader\Default.cshtml" />
-    <EmbeddedResource Include="Views\Shared\Components\OrdersList\Default.cshtml" />
+    <Content Include="Views\Shared\Components\ShippingOrderDetails\Default.cshtml" />
+    <Content Include="Views\Shared\Components\ShippingOrdersListHeader\Default.cshtml" />
+    <Content Include="Views\Shared\Components\ShippingOrdersList\Default.cshtml" />
+    <EmbeddedResource Include="Views/**/*.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

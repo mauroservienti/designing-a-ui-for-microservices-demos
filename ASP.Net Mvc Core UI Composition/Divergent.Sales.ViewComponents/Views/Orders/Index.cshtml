@@ -1,0 +1,22 @@
+﻿<h2>Orders</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            @await Component.InvokeAsync("Divergent.Sales.ViewComponents.SalesOrdersListHeader")
+            @await Component.InvokeAsync("Divergent.Shipping.ViewComponents.ShippingOrdersListHeader")
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (dynamic order in Model.OrdersViewModel.Values)
+        {
+            <tr>
+                @await Component.InvokeAsync("Divergent.Sales.ViewComponents.SalesOrdersList", order)
+                @await Component.InvokeAsync("Divergent.Shipping.ViewComponents.ShippingOrdersList", order)
+            </tr>
+
+        }
+
+    </tbody>
+</table>

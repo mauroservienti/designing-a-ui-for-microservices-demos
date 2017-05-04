@@ -2,7 +2,7 @@
 
 namespace Divergent.Sales.ViewComponents
 {
-    [ViewComponent(Name = "Divergent.Sales.ViewComponents.OrderDetails")]
+    [ViewComponent(Name = "Divergent.Sales.ViewComponents.SalesOrderDetails")]
     public class OrderDetailsViewComponent : ViewComponent
     {
         public IViewComponentResult Invoke(dynamic viewModel)
