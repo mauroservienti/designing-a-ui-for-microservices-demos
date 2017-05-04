@@ -15,6 +15,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="1.1.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0" />
@@ -24,8 +25,11 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Divergent.Sales.ViewComponents\Divergent.Sales.ViewComponents.csproj" />
     <ProjectReference Include="..\Divergent.Sales.ViewModelComposition\Divergent.Sales.ViewModelComposition.csproj" />
+    <ProjectReference Include="..\Divergent.Shipping.ViewComponents\Divergent.Shipping.ViewComponents.csproj" />
     <ProjectReference Include="..\Divergent.Shipping.ViewModelComposition\Divergent.Shipping.ViewModelComposition.csproj" />
+    <ProjectReference Include="..\ITOps.UIComposition.Mvc\ITOps.UIComposition.Mvc.csproj" />
     <ProjectReference Include="..\ITOps.ViewModelComposition.Gateway\ITOps.ViewModelComposition.Gateway.csproj" />
     <ProjectReference Include="..\ITOps.ViewModelComposition.Mvc\ITOps.ViewModelComposition.Mvc.csproj" />
   </ItemGroup>

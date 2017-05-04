@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Shared\Components\OrderDetails\Default.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ITOps.UIComposition.Mvc\ITOps.UIComposition.Mvc.csproj" />
+  </ItemGroup>
+
+</Project>

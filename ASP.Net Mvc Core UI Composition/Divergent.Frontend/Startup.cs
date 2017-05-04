@@ -1,4 +1,5 @@
-﻿using ITOps.ViewModelComposition;
+﻿using ITOps.UIComposition.Mvc;
+using ITOps.ViewModelComposition;
 using ITOps.ViewModelComposition.Gateway;
 using ITOps.ViewModelComposition.Mvc;
 using Microsoft.AspNetCore.Builder;
@@ -28,7 +29,8 @@ namespace Divergent.Frontend
             services.AddViewModelComposition();
             services
                 .AddMvc()
-                .AddViewModelCompositionMvcSupport();
+                .AddViewModelCompositionMvcSupport()
+                .AddUIComposition();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
