@@ -2,6 +2,8 @@
 
 This repository contains all the demos run during the [DDD SouthWest 2017 event](http://milestone.topics.it/events/ddd-south-west.html).
 
+Slides are available on [docs.com](https://doc.co/TPZhk9).
+
 ## ASP.Net Core API Gateway - demo
 
 The `ASP.Net Core API Gateway` solution demoes UI Composition techniques built on top of .Net Core (v1.1.2).
