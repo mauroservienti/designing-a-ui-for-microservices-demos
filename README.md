@@ -46,3 +46,21 @@ To run this sample ensure that the following projects are set as startup project
 * `Divergent.Sales.API.Host`
 * `Divergent.Shipping.API.Host`
 * `Divergent.Frontend`
+
+## Note
+
+To simplify as much as possible the sample, frontend applications, such as `Divergent.CompositionGateway` and `Divergent.Frontend`, directly reference ViewModel and UI Composition components. This allows also to avoid the usage of Visual Studio post build events, that at the time of this writing are [affected by a bug](https://github.com/dotnet/sdk/issues/677) when used in combination with .NET Core, causing events variable to not be populated as expected.
+
+A workaround is to use a `MSBuild` `Exec` task to simulate post build events. E.g. in order to try to run samples removing all hard coded references:
+
+1. Remove references to composition assemblies from frontend project(s)
+2. Edit the project file of composition assemblies that need to be copied to frontend output folders by adding the following:
+
+```xml
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="
+     copy &quot;$(TargetDir)$(TargetName).dll&quot; &quot;$(SolutionDir)Divergent.CompositionGateway\$(OutDir)$(TargetName).dll&quot; /Y /B
+     copy &quot;$(TargetDir)$(TargetName).pdb&quot; &quot;$(SolutionDir)Divergent.CompositionGateway\$(OutDir)$(TargetName).pdb&quot; /Y /B" />
+  </Target>
+```
+

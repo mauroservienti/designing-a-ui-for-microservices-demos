@@ -9,4 +9,8 @@
     <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="1.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ITOps.ViewModelComposition\ITOps.ViewModelComposition.csproj" />
+  </ItemGroup>
+
 </Project>

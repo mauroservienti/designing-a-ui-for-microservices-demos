@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Razor;
+﻿using ITOps.ViewModelComposition;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using System;
@@ -22,7 +23,7 @@ namespace ITOps.UIComposition.Mvc
 
             foreach (var fileName in fileNames)
             {
-                var assembly = Assembly.Load(new AssemblyName(Path.GetFileNameWithoutExtension(fileName)));
+                var assembly = AssemblyLoader.Load(fileName);
                 var attribute = assembly.GetCustomAttribute<UICompositionSupportAttribute>();
 
                 if (attribute != null)
