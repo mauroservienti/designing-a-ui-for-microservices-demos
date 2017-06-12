@@ -2,7 +2,7 @@
 
 This repository contains all the demos run during the [DDD SouthWest 2017 event](http://milestone.topics.it/events/ddd-south-west.html).
 
-Slides are available on [docs.com](https://doc.co/TPZhk9).
+Slides are available on [Slideshare](https://www.slideshare.net/mauroservienti/designing-a-ui-for-microservices).
 
 ## ASP.Net Core API Gateway - demo
 
