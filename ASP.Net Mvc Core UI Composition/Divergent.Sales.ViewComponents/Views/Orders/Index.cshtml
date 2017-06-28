@@ -9,7 +9,7 @@
     </thead>
     <tbody>
 
-        @foreach (dynamic order in Model.OrdersViewModel.Values)
+        @foreach (dynamic order in Model.Orders)
         {
             <tr>
                 @await Component.InvokeAsync("Divergent.Sales.ViewComponents.SalesOrdersList", order)
