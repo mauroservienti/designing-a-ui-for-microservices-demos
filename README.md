@@ -1,6 +1,8 @@
 # Designing a UI for Microservices - Demos
 
-This repository contains all the demos run during the [DDD SouthWest 2017 event](http://milestone.topics.it/events/ddd-south-west.html).
+This repository contains all the demos run during the `Designing a UI for Microservices` talk
+
+* [DDD SouthWest 2017 release](https://github.com/mauroservienti/Designing-a-UI-for-Microservices-Demos/releases/tag/DDD-SW-2017) - [event details](http://milestone.topics.it/events/ddd-south-west.html).
 
 Slides are available on [Slideshare](https://www.slideshare.net/mauroservienti/designing-a-ui-for-microservices).
 
