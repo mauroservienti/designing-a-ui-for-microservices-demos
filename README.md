@@ -68,4 +68,5 @@ A workaround is to use a `MSBuild` `Exec` task to simulate post build events. E.
 
 NOTE:
 
-All solutions are configured to use the [SwitchStartupProject](https://marketplace.visualstudio.com/items?itemName=vs-publisher-141975.SwitchStartupProject) Visual Studio Extension to manage startup projects. The extension is not a requirement, but it's comfortable.
+* All solutions are configured to use the [SwitchStartupProject](https://marketplace.visualstudio.com/items?itemName=vs-publisher-141975.SwitchStartupProject) Visual Studio Extension to manage startup projects. The extension is not a requirement, but it's comfortable.
+* A [LINQPad script](SetStartupProjects.linq) is available to automatically configure startup projects for all solutions in the demo
