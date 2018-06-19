@@ -3,8 +3,7 @@
 This repository contains all the demos run during the `Designing a UI for Microservices` talk
 
 * [DDD SouthWest 2017 release](https://github.com/mauroservienti/Designing-a-UI-for-Microservices-Demos/releases/tag/DDD-SW-2017) - [event details](http://milestone.topics.it/events/ddd-south-west.html).
-
-Slides are available on [Slideshare](https://www.slideshare.net/mauroservienti/designing-a-ui-for-microservices).
+* [ApiConf 2018](https://github.com/mauroservienti/designing-a-ui-for-microservices-demos/releases/tag/ApiConf-2018) - [Event details](https://milestone.topics.it/events/api-conf-2018.html).
 
 ## ASP.Net Core API Gateway - demo
 
