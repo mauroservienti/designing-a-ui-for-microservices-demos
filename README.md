@@ -7,7 +7,7 @@ This repository contains all the demos run during the `Designing a UI for Micros
 
 ## ASP.Net Core API Gateway - demo
 
-The `ASP.Net Core API Gateway` solution demoes UI Composition techniques built on top of .Net Core (v1.1.2).
+The `ASP.Net Core API Gateway` solution demoes UI Composition techniques built on top of .Net Core.
 
 ### Divergent.CompositionGateway
 
