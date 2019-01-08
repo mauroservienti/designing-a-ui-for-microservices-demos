@@ -5,6 +5,10 @@ This repository contains all the demos run during the `Designing a UI for Micros
 * [DDD SouthWest 2017 release](https://github.com/mauroservienti/Designing-a-UI-for-Microservices-Demos/releases/tag/DDD-SW-2017) - [event details](http://milestone.topics.it/events/ddd-south-west.html).
 * [ApiConf 2018](https://github.com/mauroservienti/designing-a-ui-for-microservices-demos/releases/tag/ApiConf-2018) - [Event details](https://milestone.topics.it/events/api-conf-2018.html).
 
+## Requirements
+
+* Visual Studio 2017 with [.NET Core 2.2.x](https://www.microsoft.com/net/download/dotnet-core/2.2) support (Community Edition is supported), available for download at [https://www.visualstudio.com/downloads/](https://www.visualstudio.com/downloads/)
+
 ## ASP.Net Core API Gateway - demo
 
 The `ASP.Net Core API Gateway` solution demoes UI Composition techniques built on top of .Net Core.

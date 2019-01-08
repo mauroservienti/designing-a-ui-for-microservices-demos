@@ -9,17 +9,17 @@
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" version="6.2.0" />
-    <PackageReference Include="Microsoft.AspNet.Cors" version="5.2.6" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.Client" version="5.2.6" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.Core" version="5.2.6" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.Owin" version="5.2.6" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.OwinSelfHost" version="5.2.6" />
+    <PackageReference Include="Microsoft.AspNet.Cors" version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Owin" version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.OwinSelfHost" version="5.2.7" />
     <PackageReference Include="Microsoft.Owin" version="4.0.0" />
     <PackageReference Include="Microsoft.Owin.Cors" version="4.0.0" />
     <PackageReference Include="Microsoft.Owin.Host.HttpListener" version="4.0.0" />
     <PackageReference Include="Microsoft.Owin.Hosting" version="4.0.0" />
     <PackageReference Include="Microsoft.Web.Infrastructure" version="1.0.0.0" />
-    <PackageReference Include="Newtonsoft.Json" version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json" version="12.0.1" />
     <PackageReference Include="Owin" version="1.0" />
     <PackageReference Include="System.Data.SQLite" version="1.0.109.2" />
     <PackageReference Include="System.Data.SQLite.Core" version="1.0.109.2" />
