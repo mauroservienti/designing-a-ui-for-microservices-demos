@@ -25,7 +25,7 @@
     <PackageReference Include="System.Data.SQLite.Core" version="1.0.110" />
     <PackageReference Include="System.Data.SQLite.EF6" version="1.0.110" />
     <PackageReference Include="System.Data.SQLite.Linq" version="1.0.110" />
-    <PackageReference Include="Topshelf" version="4.1.0" />
+    <PackageReference Include="Topshelf" version="4.2.0" />
   </ItemGroup>
 
   <ItemGroup>
