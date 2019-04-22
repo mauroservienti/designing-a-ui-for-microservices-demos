@@ -19,7 +19,7 @@
     <PackageReference Include="Microsoft.Owin.Host.HttpListener" version="4.0.1" />
     <PackageReference Include="Microsoft.Owin.Hosting" version="4.0.1" />
     <PackageReference Include="Microsoft.Web.Infrastructure" version="1.0.0.0" />
-    <PackageReference Include="Newtonsoft.Json" version="12.0.1" />
+    <PackageReference Include="Newtonsoft.Json" version="12.0.2" />
     <PackageReference Include="Owin" version="1.0" />
     <PackageReference Include="System.Data.SQLite" version="1.0.110" />
     <PackageReference Include="System.Data.SQLite.Core" version="1.0.110" />
