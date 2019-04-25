@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ServiceComposer.AspNetCore" Version="0.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\shared\JsonUtils\JsonUtils.csproj" />
     <ProjectReference Include="..\Divergent.Sales.ViewModelComposition.Events\Divergent.Sales.ViewModelComposition.Events.csproj" />
   </ItemGroup>
 
