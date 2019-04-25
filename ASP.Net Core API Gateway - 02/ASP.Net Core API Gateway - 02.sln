@@ -23,6 +23,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Divergent.Shipping.Data", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Divergent.Shipping.API.Host", "Divergent.Shipping.API.Host\Divergent.Shipping.API.Host.csproj", "{0059E3AC-0AFA-43F6-B631-200CBB723F94}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonUtils", "..\shared\JsonUtils\JsonUtils.csproj", "{DD9A0D8A-4C46-4181-8B67-CEF13A3103D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{5DA2F54A-1BF6-4621-82FE-C410FA357C9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,10 @@ Global
 		{0059E3AC-0AFA-43F6-B631-200CBB723F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0059E3AC-0AFA-43F6-B631-200CBB723F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0059E3AC-0AFA-43F6-B631-200CBB723F94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD9A0D8A-4C46-4181-8B67-CEF13A3103D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9A0D8A-4C46-4181-8B67-CEF13A3103D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9A0D8A-4C46-4181-8B67-CEF13A3103D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9A0D8A-4C46-4181-8B67-CEF13A3103D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +81,7 @@ Global
 		{DC8ADA37-837C-490F-BDFC-FC8D1001417E} = {C243015C-AEC9-4694-889E-4B57E208FD2A}
 		{0EFF2E29-829B-4B1C-A7C6-47D63B05F52B} = {9D36D6A4-373C-4CB0-8B54-D15505E2AE91}
 		{0059E3AC-0AFA-43F6-B631-200CBB723F94} = {9D36D6A4-373C-4CB0-8B54-D15505E2AE91}
+		{DD9A0D8A-4C46-4181-8B67-CEF13A3103D9} = {5DA2F54A-1BF6-4621-82FE-C410FA357C9E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5186B554-CD6C-47DE-A43F-701684BA6186}
