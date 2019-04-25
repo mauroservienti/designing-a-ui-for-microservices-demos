@@ -1,5 +1,5 @@
-﻿using ITOps.ViewModelComposition;
-using ITOps.ViewModelComposition.Gateway;
+﻿using ServiceComposer.AspNetCore;
+using ServiceComposer.AspNetCore.Gateway;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;

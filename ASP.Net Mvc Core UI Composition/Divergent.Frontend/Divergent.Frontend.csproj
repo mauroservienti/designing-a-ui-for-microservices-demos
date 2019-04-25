@@ -15,6 +15,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="ServiceComposer.AspNetCore" Version="0.0.6" />
+    <PackageReference Include="ServiceComposer.AspNetCore.Mvc" Version="0.0.3" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
@@ -26,8 +28,6 @@
     <ProjectReference Include="..\Divergent.Shipping.ViewComponents\Divergent.Shipping.ViewComponents.csproj" />
     <ProjectReference Include="..\Divergent.Shipping.ViewModelComposition\Divergent.Shipping.ViewModelComposition.csproj" />
     <ProjectReference Include="..\ITOps.UIComposition.Mvc\ITOps.UIComposition.Mvc.csproj" />
-    <ProjectReference Include="..\ITOps.ViewModelComposition.Gateway\ITOps.ViewModelComposition.Gateway.csproj" />
-    <ProjectReference Include="..\ITOps.ViewModelComposition.Mvc\ITOps.ViewModelComposition.Mvc.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\api\" />

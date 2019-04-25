@@ -1,8 +1,8 @@
-﻿using ITOps.ViewModelComposition;
-using ITOps.ViewModelComposition.Gateway;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ServiceComposer.AspNetCore;
+using ServiceComposer.AspNetCore.Gateway;
 
 namespace Divergent.CompositionGateway
 {

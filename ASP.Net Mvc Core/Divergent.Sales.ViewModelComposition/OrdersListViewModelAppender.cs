@@ -1,6 +1,6 @@
 ﻿using Divergent.Sales.ViewModelComposition.Events;
-using ITOps.ViewModelComposition;
-using ITOps.ViewModelComposition.Json;
+using ServiceComposer.AspNetCore;
+using JsonUtils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using System.Collections.Generic;
@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace Divergent.Sales.ViewModelComposition
 {
-    public class OrdersListViewModelAppender : IViewModelAppender
+    public class OrdersListViewModelAppender : IHandleRequests
     {
-        public bool Matches(RouteData routeData, string verb)
+        public bool Matches(RouteData routeData, string httpVerb, HttpRequest request)
         {
             /*
              * matching is a bit weak in this sample, it's designed 
@@ -21,28 +21,28 @@ namespace Divergent.Sales.ViewModelComposition
              */
             var controller = (string)routeData.Values["controller"];
 
-            return HttpMethods.IsGet(verb)
+            return HttpMethods.IsGet(httpVerb)
                 && controller.ToLowerInvariant() == "orders"
                 && !routeData.Values.ContainsKey("id");
         }
 
-        public async Task Append(dynamic vm, RouteData routeData, IQueryCollection query)
+        public async Task Handle(string requestId, dynamic vm, RouteData routeData, HttpRequest request)
         {
-            var pageIndex = (string)query["pageindex"] ?? "0";
-            var pageSize = (string)query["pageSize"] ?? "10";
+            var pageIndex = (string)request.Query["pageindex"] ?? "0";
+            var pageSize = (string)request.Query["pageSize"] ?? "10";
 
             var url = $"http://localhost:20295/api/orders?pageSize={pageSize}&pageIndex={pageIndex}";
             var client = new HttpClient();
-            var response = await client.GetAsync(url).ConfigureAwait(false);
+            var response = await client.GetAsync(url);
 
-            dynamic[] orders = await response.Content.AsExpandoArrayAsync().ConfigureAwait(false);
+            dynamic[] orders = await response.Content.AsExpandoArray();
 
             var ordersViewModel = MapToDictionary(orders);
 
-            await vm.RaiseEventAsync(new OrdersLoaded()
+            await vm.RaiseEvent(new OrdersLoaded()
             {
                 OrdersViewModel = ordersViewModel
-            }).ConfigureAwait(false);
+            });
 
             vm.Orders = ordersViewModel.Values.ToArray();
         }

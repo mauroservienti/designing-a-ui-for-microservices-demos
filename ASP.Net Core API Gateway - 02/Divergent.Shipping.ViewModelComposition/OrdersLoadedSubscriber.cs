@@ -1,6 +1,6 @@
 ﻿using Divergent.Sales.ViewModelComposition.Events;
-using ITOps.ViewModelComposition;
-using ITOps.ViewModelComposition.Json;
+using ServiceComposer.AspNetCore;
+using JsonUtils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using System;
@@ -10,7 +10,7 @@ namespace Divergent.Shipping.ViewModelComposition
 {
     public class OrdersLoadedSubscriber : ISubscribeToCompositionEvents
     {
-        public bool Matches(RouteData routeData, string httpVerb)
+        public bool Matches(RouteData routeData, string httpVerb, HttpRequest request)
         {
             /*
              * matching is a bit weak in this sample, it's designed 
@@ -23,18 +23,18 @@ namespace Divergent.Shipping.ViewModelComposition
                 && !routeData.Values.ContainsKey("id");
         }
 
-        public void Subscribe(ISubscriptionStorage subscriptionStorage, RouteData rd, IQueryCollection queryString)
+        public void Subscribe(IPublishCompositionEvents publisher)
         {
-            subscriptionStorage.Subscribe<OrdersLoaded>(async (pageViewModel, @event, routeData, query) =>
+            publisher.Subscribe<OrdersLoaded>(async (requestId, pageViewModel, @event, routeData, query) =>
             {
                 var ids = String.Join(",", @event.OrdersViewModel.Keys);
 
                 var url = $"http://localhost:20296/api/shippinginfo/orders?ids={ids}";
                 var client = new HttpClient();
 
-                var response = await client.GetAsync(url).ConfigureAwait(false);
+                var response = await client.GetAsync(url);
 
-                dynamic[] shippingInfos = await response.Content.AsExpandoArrayAsync().ConfigureAwait(false);
+                dynamic[] shippingInfos = await response.Content.AsExpandoArray();
 
                 foreach (dynamic item in shippingInfos)
                 {

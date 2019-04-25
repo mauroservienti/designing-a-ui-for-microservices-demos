@@ -1,5 +1,5 @@
-﻿using ITOps.ViewModelComposition;
-using ITOps.ViewModelComposition.Json;
+﻿using ServiceComposer.AspNetCore;
+using JsonUtils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using System.Net.Http;
@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Divergent.Sales.ViewModelComposition
 {
-    public class OrderDetailsViewModelAppender : IViewModelAppender
+    public class OrderDetailsViewModelAppender : IHandleRequests
     {
-        public bool Matches(RouteData routeData, string verb)
+        public bool Matches(RouteData routeData, string httpVerb, HttpRequest request)
         {
             /*
              * matching is a bit weak in this sample, it's designed 
@@ -17,20 +17,20 @@ namespace Divergent.Sales.ViewModelComposition
              */
             var controller = (string)routeData.Values["controller"];
 
-            return HttpMethods.IsGet(verb)
+            return HttpMethods.IsGet(httpVerb)
                 && controller.ToLowerInvariant() == "orders"
                 && routeData.Values.ContainsKey("id");
         }
 
-        public async Task Append(dynamic vm, RouteData routeData, IQueryCollection query)
+        public async Task Handle(string requestId, dynamic vm, RouteData routeData, HttpRequest request)
         {
             var id = (string)routeData.Values["id"];
 
             var url = $"http://localhost:20295/api/orders/{id}";
             var client = new HttpClient();
-            var response = await client.GetAsync(url).ConfigureAwait(false);
+            var response = await client.GetAsync(url);
 
-            dynamic order = await response.Content.AsExpandoAsync().ConfigureAwait(false);
+            dynamic order = await response.Content.AsExpando();
 
             vm.OrderNumber = order.Number;
             vm.OrderItemsCount = order.ItemsCount;

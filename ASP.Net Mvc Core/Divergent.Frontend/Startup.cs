@@ -1,6 +1,6 @@
-﻿using ITOps.ViewModelComposition;
-using ITOps.ViewModelComposition.Gateway;
-using ITOps.ViewModelComposition.Mvc;
+﻿using ServiceComposer.AspNetCore;
+using ServiceComposer.AspNetCore.Mvc;
+using ServiceComposer.AspNetCore.Gateway;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,10 +25,11 @@ namespace Divergent.Frontend
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddViewModelComposition();
-            services
-                .AddMvc()
-                .AddViewModelCompositionMvcSupport();
+            services.AddMvc();
+            services.AddViewModelComposition(options=>
+            {
+                options.AddMvcSupport();
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

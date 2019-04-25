@@ -10,11 +10,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.2.2" />
+    <PackageReference Include="ServiceComposer.AspNetCore" Version="0.0.6" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Divergent.Sales.ViewModelComposition\Divergent.Sales.ViewModelComposition.csproj" />
     <ProjectReference Include="..\Divergent.Shipping.ViewModelComposition\Divergent.Shipping.ViewModelComposition.csproj" />
-    <ProjectReference Include="..\ITOps.ViewModelComposition.Gateway\ITOps.ViewModelComposition.Gateway.csproj" />
   </ItemGroup>
 
 </Project>
