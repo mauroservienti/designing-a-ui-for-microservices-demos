@@ -110,7 +110,7 @@
 			"response": []
 		},
 		{
-			"name": "[Composed]: Product #1",
+			"name": "[Composed] Product #1",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -152,6 +152,30 @@
 					"port": "5002",
 					"path": [
 						"api",
+						"available",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Composed] Available Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:4457/available/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4457",
+					"path": [
 						"available",
 						"products"
 					]
