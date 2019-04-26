@@ -1,64 +1,161 @@
 {
-	"variables": [],
 	"info": {
+		"_postman_id": "c8b4ae5c-4202-4b9a-8536-da2ba02fccb5",
 		"name": "Designing a UI for Microservices",
-		"_postman_id": "71510306-c9e1-ad86-ca26-d98bd6fbfad2",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Order #1 - Sales only",
+			"name": "Sales: Product #1 - Price",
 			"request": {
-				"url": "http://localhost:20295/api/orders/1",
 				"method": "GET",
 				"header": [],
-				"body": {},
-				"description": ""
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/prices/product/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"prices",
+						"product",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "Order #1 - Shipping only",
+			"name": "Catalog: Product #1 - Details",
 			"request": {
-				"url": "http://localhost:20296/api/shippinginfo/order/1",
 				"method": "GET",
 				"header": [],
-				"body": {},
-				"description": ""
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5002/api/product-details/product/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"product-details",
+						"product",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "Order #1 - composed",
+			"name": "Shipping: Product #1 - Shipping Options",
 			"request": {
-				"url": "http://localhost:4457/orders/1",
 				"method": "GET",
 				"header": [],
-				"body": {},
-				"description": ""
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5004/api/shipping-options/product/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"shipping-options",
+						"product",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "Orders List - Sales only",
+			"name": "Warehouse: Product #1 - Inventory",
 			"request": {
-				"url": "http://localhost:20295/api/orders?pageSize=10&pageIndex=0",
 				"method": "GET",
 				"header": [],
-				"body": {},
-				"description": ""
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5003/api/inventory/product/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5003",
+					"path": [
+						"api",
+						"inventory",
+						"product",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "Orders List - composed",
+			"name": "[Composed]: Product #1",
 			"request": {
-				"url": "http://localhost:4457/orders",
 				"method": "GET",
 				"header": [],
-				"body": {},
-				"description": ""
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:4457/products/details/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4457",
+					"path": [
+						"products",
+						"details",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Catalog: Available Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5002/api/available/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"available",
+						"products"
+					]
+				}
 			},
 			"response": []
 		}
