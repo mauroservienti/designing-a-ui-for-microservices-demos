@@ -16,7 +16,10 @@ namespace Divergent.CompositionGateway
 
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
-            app.RunCompositionGatewayWithDefaultRoutes();
+            app.RunCompositionGateway( routeBuilder=> 
+            {
+                routeBuilder.MapComposableGet("{controller}/{action}/{id:int}");
+            } );
         }
     }
 }
