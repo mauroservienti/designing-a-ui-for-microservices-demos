@@ -15,7 +15,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="ServiceComposer.AspNetCore" Version="0.0.6" />
-    <PackageReference Include="ServiceComposer.AspNetCore.Mvc" Version="0.0.3" />
+    <PackageReference Include="ServiceComposer.AspNetCore.Mvc" Version="0.0.4" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
