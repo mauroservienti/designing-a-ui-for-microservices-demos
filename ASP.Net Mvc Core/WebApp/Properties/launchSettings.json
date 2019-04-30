@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "Divergent.Frontend": {
+    "WebApp": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

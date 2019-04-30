@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Divergent.CompositionGateway
+namespace CompositionGateway
 {
     public class Program
     {

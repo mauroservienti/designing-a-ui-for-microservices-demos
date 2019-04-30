@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "Divergent.CompositionGateway": {
+    "CompositionGateway": {
       "commandName": "Project",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
