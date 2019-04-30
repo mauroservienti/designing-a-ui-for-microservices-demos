@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using ServiceComposer.AspNetCore;
 using ServiceComposer.AspNetCore.Gateway;
 
-namespace Divergent.CompositionGateway
+namespace CompositionGateway
 {
     public class Startup
     {
