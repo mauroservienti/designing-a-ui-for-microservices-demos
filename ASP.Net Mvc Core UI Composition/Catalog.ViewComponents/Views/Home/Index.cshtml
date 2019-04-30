@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Available Products";
+}
+
+<div class="jumbotron">
+    <h2>Branding - Mvc Core Demo</h2>
+</div>
+
+@await Component.InvokeAsync("Catalog.ViewComponents.AvailableProducts", Model.AvailableProducts)

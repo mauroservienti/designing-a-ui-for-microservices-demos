@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Available Products";
+}
+
+<div class="jumbotron">
+    <h2>Branding - Mvc Core Demo</h2>
+</div>
+<h2>Available products</h2>
+<ul>
+    @foreach (dynamic availableProduct in Model.AvailableProducts)
+    {
+        <li>
+            <a asp-controller="Products"
+               asp-action="Details"
+               asp-route-id="@availableProduct.Id">@availableProduct.ProductName</a>, $@availableProduct.ProductPrice
+        </li>
+    }
+</ul>

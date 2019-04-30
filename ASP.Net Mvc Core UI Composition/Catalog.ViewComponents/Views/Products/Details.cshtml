@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = $"Product {Model.ProductName}";
+}
+
+<h2>@Model.ProductName Details</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">@Model.ProductDescription</h3>
+    </div>
+    <div class="panel-body">
+        @await Component.InvokeAsync("Sales.ViewComponents.ProductDetailsPrice")
+        @await Component.InvokeAsync("Shipping.ViewComponents.ProductDetailsShippingOptions")
+        @await Component.InvokeAsync("Warehouse.ViewComponents.ProductDetailsInventory")
+    </div>
+
+</div>

@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = $"Product {Model.ProductName}";
+}
+
+<h2>@Model.ProductName Details</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">@Model.ProductDescription</h3>
+    </div>
+    <div class="panel-body">
+        <div>Price: @Model.ProductPrice</div>
+        <div>Shipping Options: @Model.ProductShippingOptions</div>
+        <div>Inventory, out of stock: @Model.ProductOutOfStock (@Model.ProductInventory)</div>
+    </div>
+
+</div>

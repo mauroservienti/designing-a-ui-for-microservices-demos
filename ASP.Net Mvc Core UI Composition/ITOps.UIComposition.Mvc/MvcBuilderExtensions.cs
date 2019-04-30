@@ -14,11 +14,7 @@ namespace ITOps.UIComposition.Mvc
         {
             var fileNames = Directory.GetFiles(AppContext.BaseDirectory, assemblySearchPattern);
 
-            var assemblies = Create( new
-            {
-                BaseNamespace = "",
-                Assembly = (Assembly)null
-            } );
+            var assemblies = new List<(string BaseNamespace, Assembly Assembly)>();
 
             foreach (var fileName in fileNames)
             {
@@ -27,11 +23,7 @@ namespace ITOps.UIComposition.Mvc
 
                 if (attribute != null)
                 {
-                    assemblies.Add(new
-                    {
-                        BaseNamespace = attribute.BaseNamespace,
-                        Assembly = assembly
-                    });
+                    assemblies.Add((attribute.BaseNamespace, assembly));
                 }
             }
 
@@ -45,11 +37,6 @@ namespace ITOps.UIComposition.Mvc
             });
 
             return builder;
-        }
-
-        static List<T> Create<T>(T template)
-        {
-            return new List<T>();
         }
     }
 }
