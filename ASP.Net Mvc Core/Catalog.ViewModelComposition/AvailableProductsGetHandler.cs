@@ -19,8 +19,8 @@ namespace Catalog.ViewModelComposition
             var action = (string)routeData.Values["action"];
 
             return HttpMethods.IsGet(httpVerb)
-                   && controller.ToLowerInvariant() == "available"
-                   && action.ToLowerInvariant() == "products"
+                   && controller.ToLowerInvariant() == "home"
+                   && action.ToLowerInvariant() == "index"
                    && !routeData.Values.ContainsKey("id");
         }
 

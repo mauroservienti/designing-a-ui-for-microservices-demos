@@ -22,11 +22,10 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Divergent.Sales.ViewModelComposition\Divergent.Sales.ViewModelComposition.csproj" />
-    <ProjectReference Include="..\Divergent.Shipping.ViewModelComposition\Divergent.Shipping.ViewModelComposition.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\api\" />
+    <ProjectReference Include="..\Catalog.ViewModelComposition\Catalog.ViewModelComposition.csproj" />
+    <ProjectReference Include="..\Sales.ViewModelComposition\Sales.ViewModelComposition.csproj" />
+    <ProjectReference Include="..\Shipping.ViewModelComposition\Shipping.ViewModelComposition.csproj" />
+    <ProjectReference Include="..\Warehouse.ViewModelComposition\Warehouse.ViewModelComposition.csproj" />
   </ItemGroup>
 
 </Project>
