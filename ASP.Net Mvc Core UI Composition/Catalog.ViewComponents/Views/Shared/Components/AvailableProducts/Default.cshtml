@@ -1,0 +1,12 @@
+﻿<h2>Available products</h2>
+<ul>
+    @foreach (dynamic availableProduct in Model)
+    {
+    <li>
+        <a asp-controller="Products"
+           asp-action="Details"
+           asp-route-id="@availableProduct.Id">@availableProduct.ProductName</a>,
+        @await Component.InvokeAsync("Sales.ViewComponents.AvailableProductPrice", availableProduct)
+    </li>
+    }
+</ul>
