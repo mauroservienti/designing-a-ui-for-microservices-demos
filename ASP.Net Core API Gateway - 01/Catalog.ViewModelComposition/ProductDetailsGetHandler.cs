@@ -12,11 +12,9 @@ namespace Sales.ViewModelComposition
         public bool Matches(RouteData routeData, string httpVerb, HttpRequest request)
         {
             var controller = (string)routeData.Values["controller"];
-            var action = (string)routeData.Values["action"];
 
             return HttpMethods.IsGet(httpVerb)
                    && controller.ToLowerInvariant() == "products"
-                   && action.ToLowerInvariant() == "details"
                    && routeData.Values.ContainsKey("id");
         }
 
