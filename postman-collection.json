@@ -119,7 +119,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:4457/products/details/1",
+					"raw": "http://localhost:4457/products/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -127,7 +127,6 @@
 					"port": "4457",
 					"path": [
 						"products",
-						"details",
 						"1"
 					]
 				}

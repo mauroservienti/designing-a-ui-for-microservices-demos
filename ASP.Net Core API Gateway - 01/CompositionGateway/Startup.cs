@@ -18,7 +18,7 @@ namespace CompositionGateway
         {
             app.RunCompositionGateway( routeBuilder=> 
             {
-                routeBuilder.MapComposableGet("{controller}/{action}/{id:int}");
+                routeBuilder.MapComposableGet("{controller}/{id:int}");
             } );
         }
     }
