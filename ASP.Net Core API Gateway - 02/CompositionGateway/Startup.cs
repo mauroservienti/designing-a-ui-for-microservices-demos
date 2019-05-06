@@ -16,9 +16,10 @@ namespace CompositionGateway
 
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
-            app.RunCompositionGateway( routeBuilder=> 
+            app.RunCompositionGateway( routeBuilder=>
             {
-                routeBuilder.MapComposableGet("{controller}/{action}/{id:int?}");
+                routeBuilder.MapComposableGet("{controller}/{id:int}");
+                routeBuilder.MapComposableGet("{controller}/{action}");
             } );
         }
     }
