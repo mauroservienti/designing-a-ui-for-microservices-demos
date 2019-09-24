@@ -6,7 +6,7 @@ ViewModel Composition is deeply discussed on my blog in the [ViewModel Compositi
 
 ## Requirements
 
-* Visual Studio 2017 with [.NET Core 2.2.x](https://www.microsoft.com/net/download/dotnet-core/2.2) support (Community Edition is supported), available for download at [https://www.visualstudio.com/downloads/](https://www.visualstudio.com/downloads/)
+* Visual Studio 2019 with [.NET Core 3.x](https://www.microsoft.com/net/download/dotnet-core/3.0) support (Community Edition is supported), available for download at [https://www.visualstudio.com/downloads/](https://www.visualstudio.com/downloads/)
 
 ## ASP.Net Core API Gateway - demos
 
