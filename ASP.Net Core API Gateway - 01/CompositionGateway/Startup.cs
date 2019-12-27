@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using ServiceComposer.AspNetCore;
@@ -12,14 +13,24 @@ namespace CompositionGateway
         {
             services.AddRouting();
             services.AddViewModelComposition();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("APolicy", policy =>
+                    policy.Requirements.Add(new SamplePolicy()));
+            });
+
+            services.AddSingleton<IAuthorizationHandler, SamplePolicyHandler>();
         }
 
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
-            app.RunCompositionGateway( routeBuilder=> 
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseEndpoints(builder =>
             {
-                routeBuilder.MapComposableGet("{controller}/{id:int}");
-            } );
+                builder.MapGet("{controller}/{id:int}", Composition.HandleRequest)
+                    .RequireAuthorization("APolicy");
+            });
         }
     }
 }
