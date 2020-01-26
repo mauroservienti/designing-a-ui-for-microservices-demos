@@ -1,0 +1,17 @@
+version: 1
+update_configs:
+  - package_manager: "dotnet:nuget"
+    directory: "/ASP.Net Core API Gateway - 01"
+    update_schedule: "live"
+  - package_manager: "dotnet:nuget"
+    directory: "/ASP.Net Core API Gateway - 02"
+    update_schedule: "live"
+  - package_manager: "dotnet:nuget"
+    directory: "/ASP.Net Mvc Core"
+    update_schedule: "live"
+  - package_manager: "dotnet:nuget"
+    directory: "/ASP.Net Mvc Core UI Composition"
+    update_schedule: "live"
+  - package_manager: "dotnet:nuget"
+    directory: "/targets"
+    update_schedule: "live"
