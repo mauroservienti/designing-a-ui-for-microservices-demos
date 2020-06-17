@@ -18,7 +18,7 @@ internal class Program
             solution => Run(sdk.GetDotnetCliPath(), $"build \"{solution}\" --configuration Release"));
 
         Target(
-            "Test-Demo-01", DependsOn("build"),
+            "Test-Demo-01", DependsOn("Build-Demo-01"),
             Directory.EnumerateFiles("ASP.Net Core API Gateway - 01", "*.Tests.csproj", SearchOption.AllDirectories),
             proj => Run(sdk.GetDotnetCliPath(), $"test \"{proj}\" --configuration Release --no-build"));
 
