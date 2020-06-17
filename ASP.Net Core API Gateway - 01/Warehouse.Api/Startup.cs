@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Warehouse.Api.Data;
 
 namespace Warehouse.Api
 {
@@ -17,8 +16,6 @@ namespace Warehouse.Api
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            WarehouseContext.CreateSeedData();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

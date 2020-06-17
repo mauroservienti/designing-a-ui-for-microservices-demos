@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using ServiceComposer.AspNetCore.Testing;
 using Warehouse.Api.Data.Models;
@@ -6,8 +7,18 @@ using Xunit;
 
 namespace Warehouse.Api.Tests
 {
-    public class When_calling_inventory_api
+    public class When_calling_inventory_api : IDisposable
     {
+        public When_calling_inventory_api()
+        {
+            Data.WarehouseContext.CreateSeedData(Guid.NewGuid().ToString());
+        }
+
+        void IDisposable.Dispose()
+        {
+            Data.WarehouseContext.DropDatabase();
+        }
+
         [Fact]
         public async Task Get_product_should_return_200()
         {
@@ -35,7 +46,7 @@ namespace Warehouse.Api.Tests
 
             // Act
             var response = await client.GetAsync("/api/inventory/product/1");
-            var responseString =await response.Content.ReadAsStringAsync();
+            var responseString = await response.Content.ReadAsStringAsync();
             var stockItem = JsonConvert.DeserializeObject<StockItem>(responseString);
 
             // Assert

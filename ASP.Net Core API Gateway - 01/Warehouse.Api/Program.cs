@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Warehouse.Api.Data;
 
 namespace Warehouse.Api
 {
@@ -8,6 +9,7 @@ namespace Warehouse.Api
     {
         public static void Main(string[] args)
         {
+            WarehouseContext.CreateSeedData();
             CreateHostBuilder(args).Build().Run();
         }
 

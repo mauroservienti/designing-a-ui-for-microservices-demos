@@ -5,8 +5,15 @@ namespace Warehouse.Api.Data
 {
     public class WarehouseContext : DbContext
     {
-        public static void CreateSeedData()
+        static string _databaseName = "Warehouse";
+
+        internal static void CreateSeedData(string databaseName = null)
         {
+            if (!string.IsNullOrWhiteSpace(databaseName))
+            {
+                _databaseName = databaseName;
+            }
+
             using var db = new WarehouseContext();
             foreach (var stockItem in Initial.Data())
             {
@@ -16,11 +23,21 @@ namespace Warehouse.Api.Data
             db.SaveChanges();
         }
 
+        internal static void DropDatabase()
+        {
+            using var db = new WarehouseContext();
+            db.Database.EnsureDeleted();
+        }
+
+        public WarehouseContext()
+        {
+        }
+
         public DbSet<StockItem> StockItems { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase(databaseName: "Warehouse");
+            optionsBuilder.UseInMemoryDatabase(databaseName: _databaseName);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -50,7 +67,6 @@ namespace Warehouse.Api.Data
                     }
                 };
             }
-
         }
     }
 }
