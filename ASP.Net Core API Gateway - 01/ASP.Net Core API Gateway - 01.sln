@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product Catalog", "Product 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Warehouse", "Warehouse", "{79773D3D-ACE3-405A-8BCB-6444474DE6D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warehouse.Api.Tests", "Warehouse.Api.Tests\Warehouse.Api.Tests.csproj", "{67612437-132C-4033-8C19-6077899D9C1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{3BDDFFDA-D38E-4C2A-AC15-1A011B89E3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BDDFFDA-D38E-4C2A-AC15-1A011B89E3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BDDFFDA-D38E-4C2A-AC15-1A011B89E3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67612437-132C-4033-8C19-6077899D9C1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67612437-132C-4033-8C19-6077899D9C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67612437-132C-4033-8C19-6077899D9C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67612437-132C-4033-8C19-6077899D9C1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
