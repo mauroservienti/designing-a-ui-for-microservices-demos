@@ -10,16 +10,21 @@ internal class Program
     {
         var sdk = new DotnetSdkManager();
 
-        Target("default", DependsOn("verify-OS-is-suppported", "Demo-01", "Demo-02", "Demo-03", "Demo-04"));
+        Target("default", DependsOn("verify-OS-is-suppported", "Test-Demo-01", "Demo-02", "Demo-03", "Demo-04"));
 
         Target(
             "verify-OS-is-suppported",
             () => { if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) throw new InvalidOperationException("Build is supported on Windows only, at this time."); });
 
         Target(
-            "Demo-01",
+            "Build-Demo-01",
             Directory.EnumerateFiles("ASP.Net Core API Gateway - 01", "*.sln", SearchOption.AllDirectories),
-            solution => Run(sdk.GetDotnetCliPath(), $"build \"{solution}\" --configuration Debug"));
+            solution => Run(sdk.GetDotnetCliPath(), $"build \"{solution}\" --configuration Release"));
+
+        Target(
+            "Test-Demo-01", DependsOn("build"),
+            Directory.EnumerateFiles("ASP.Net Core API Gateway - 01", "*.Tests.csproj", SearchOption.AllDirectories),
+            proj => Run(sdk.GetDotnetCliPath(), $"test \"{proj}\" --configuration Release --no-build"));
 
         Target(
             "Demo-02",
