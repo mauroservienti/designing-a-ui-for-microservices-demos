@@ -10,11 +10,7 @@ internal class Program
     {
         var sdk = new DotnetSdkManager();
 
-        Target("default", DependsOn("verify-OS-is-suppported", "Test-Demo-01", "Demo-02", "Demo-03", "Demo-04"));
-
-        Target(
-            "verify-OS-is-suppported",
-            () => { if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) throw new InvalidOperationException("Build is supported on Windows only, at this time."); });
+        Target("default", DependsOn("Test-Demo-01", "Demo-02", "Demo-03", "Demo-04"));
 
         Target(
             "Build-Demo-01",
