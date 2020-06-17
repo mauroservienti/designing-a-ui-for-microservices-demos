@@ -37,8 +37,6 @@ internal class Program
             Directory.EnumerateFiles("ASP.Net Mvc Core UI Composition", "*.sln", SearchOption.AllDirectories),
             solution => Run(sdk.GetDotnetCliPath(), $"build \"{solution}\" --configuration Debug"));
 
-        RunTargets(args);
+        RunTargetsAndExit(args);
     }
-
-
 }
