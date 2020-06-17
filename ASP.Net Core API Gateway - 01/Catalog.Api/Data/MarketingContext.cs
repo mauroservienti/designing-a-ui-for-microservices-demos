@@ -1,7 +1,7 @@
-﻿using Catalog.Data.Models;
+﻿using Catalog.Api.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Catalog.Data
+namespace Catalog.Api.Data
 {
     public class MarketingContext : DbContext
     {
@@ -32,7 +32,7 @@ namespace Catalog.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        internal static class Initial
+        static class Initial
         {
             internal static ProductDetails[] Data()
             {

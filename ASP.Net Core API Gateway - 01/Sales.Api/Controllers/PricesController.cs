@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Sales.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sales.Api.Data;
 
 namespace Sales.Api.Controllers
 {

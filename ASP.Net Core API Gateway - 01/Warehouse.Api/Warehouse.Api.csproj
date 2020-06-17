@@ -8,20 +8,4 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.5" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="wwwroot\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Remove="wwwroot\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="wwwroot\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="wwwroot\**" />
-  </ItemGroup>
-
 </Project>
