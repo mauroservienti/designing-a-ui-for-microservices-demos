@@ -1,21 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Warehouse.Data.Models;
+using Warehouse.Api.Data.Models;
 
-namespace Warehouse.Data
+namespace Warehouse.Api.Data
 {
     public class WarehouseContext : DbContext
     {
         public static void CreateSeedData()
         {
-            using (var db = new WarehouseContext())
+            using var db = new WarehouseContext();
+            foreach (var stockItem in Initial.Data())
             {
-                foreach (var stockItem in Initial.Data())
-                {
-                    db.StockItems.Add(stockItem);
-                }
-
-                db.SaveChanges();
+                db.StockItems.Add(stockItem);
             }
+
+            db.SaveChanges();
         }
 
         public DbSet<StockItem> StockItems { get; set; }
@@ -32,7 +30,7 @@ namespace Warehouse.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        internal static class Initial
+        static class Initial
         {
             internal static StockItem[] Data()
             {
