@@ -16,11 +16,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Warehouse.Api\Warehouse.Api.csproj" />
+      <ProjectReference Include="..\Shipping.Api\Shipping.Api.csproj" />
     </ItemGroup>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="copy &quot;$(SolutionDir)Warehouse.Api\$(OutDir)Warehouse.Api.deps.json&quot; &quot;$(ProjectDir)$(OutDir)Warehouse.Api.deps.json&quot; /Y" />
+        <Exec Command="copy &quot;$(SolutionDir)Shipping.Api\$(OutDir)Shipping.Api.deps.json&quot; &quot;$(ProjectDir)$(OutDir)Shipping.Api.deps.json&quot; /Y" />
     </Target>
 
 </Project>

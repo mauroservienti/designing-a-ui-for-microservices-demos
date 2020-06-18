@@ -15,31 +15,26 @@ namespace Shipping.Api.Controllers
         [Route("product/{id}")]
         public dynamic Get(int id)
         {
-            using (var db = new ShippingContext())
-            {
-                var item = db.ProductShippingOptions
-                    .Include(pso => pso.Options)
-                    .Where(o => o.ProductId == id)
-                    .SingleOrDefault();
+            using var db = new ShippingContext();
+            var item = db.ProductShippingOptions
+                .Include(pso => pso.Options)
+                .SingleOrDefault(o => o.ProductId == id);
 
-                return item;
-            }
+            return item;
         }
 
         [HttpGet]
         [Route("products/{ids}")]
         public IEnumerable<dynamic> Get(string ids)
         {
-            using (var db = new ShippingContext())
-            {
-                var productIds = ids.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).Select(s => int.Parse(s)).ToArray();
-                var items = db.ProductShippingOptions
-                    .Include(pso => pso.Options)
-                    .Where(status => productIds.Any(id => id == status.ProductId))
-                    .ToArray();
+            using var db = new ShippingContext();
+            var productIds = ids.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).Select(s => int.Parse(s)).ToArray();
+            var items = db.ProductShippingOptions
+                .Include(pso => pso.Options)
+                .Where(status => productIds.Any(id => id == status.ProductId))
+                .ToArray();
 
-                return items;
-            }
+            return items;
         }
     }
 }
