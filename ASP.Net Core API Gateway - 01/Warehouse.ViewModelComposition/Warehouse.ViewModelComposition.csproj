@@ -6,10 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="ServiceComposer.AspNetCore" Version="1.0.0-Beta.1" />
+    <PackageReference Include="ServiceComposer.AspNetCore" Version="1.0.0-Beta.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ConfigurationUtils\ConfigurationUtils.csproj" />
     <ProjectReference Include="..\JsonUtils\JsonUtils.csproj" />
   </ItemGroup>
 
