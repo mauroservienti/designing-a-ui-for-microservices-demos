@@ -20,18 +20,5 @@ namespace Warehouse.Api.Controllers
 
             return item;
         }
-
-        [HttpGet]
-        [Route("products/{ids}")]
-        public IEnumerable<dynamic> Get(string ids)
-        {
-            using var db = new WarehouseContext();
-            var productIds = ids.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).Select(s => int.Parse(s)).ToArray();
-            var items = db.StockItems
-                .Where(status => productIds.Any(id => id == status.ProductId))
-                .ToArray();
-
-            return items;
-        }
     }
 }
