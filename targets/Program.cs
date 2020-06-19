@@ -25,7 +25,7 @@ internal class Program
         Target(
            "Build-Demo-02",
             Directory.EnumerateFiles("ASP.Net Core API Gateway - 02", "*.sln", SearchOption.AllDirectories),
-            solution => Run(sdk.GetDotnetCliPath(), $"build \"{solution}\" --configuration Debug"));
+            solution => Run(sdk.GetDotnetCliPath(), $"build \"{solution}\" --configuration Release"));
 
 	Target(
             "Test-Demo-02", DependsOn("Build-Demo-02"),
@@ -35,12 +35,12 @@ internal class Program
         Target(
             "Demo-03",
             Directory.EnumerateFiles("ASP.Net Mvc Core", "*.sln", SearchOption.AllDirectories),
-            solution => Run(sdk.GetDotnetCliPath(), $"build \"{solution}\" --configuration Debug"));
+            solution => Run(sdk.GetDotnetCliPath(), $"build \"{solution}\" --configuration Release"));
 
         Target(
             "Demo-04",
             Directory.EnumerateFiles("ASP.Net Mvc Core UI Composition", "*.sln", SearchOption.AllDirectories),
-            solution => Run(sdk.GetDotnetCliPath(), $"build \"{solution}\" --configuration Debug"));
+            solution => Run(sdk.GetDotnetCliPath(), $"build \"{solution}\" --configuration Release"));
 
         RunTargetsAndExit(args);
     }
