@@ -100,6 +100,7 @@ namespace Composition.Tests
                             var val when val == typeof(Catalog.ViewModelComposition.AvailableProductsLoadedSubscriber).FullName => _catalogApiClient,
                             var val when val == typeof(Catalog.ViewModelComposition.AvailableProductsGetHandler).FullName => _catalogApiClient,
                             var val when val == typeof(Sales.ViewModelComposition.AvailableProductsLoadedSubscriber).FullName => _salesApiClient,
+                            var val when val == typeof(Warehouse.ViewModelComposition.AvailableProductsLoadedSubscriber).FullName => _warehouseApiClient,
                             _ => throw new NotSupportedException($"Missing HTTP client for {name}")
                         };
 
@@ -127,6 +128,7 @@ namespace Composition.Tests
                     Assert.Equal(10, item.ProductPrice);
                     Assert.Equal("Banana Holder", item.ProductName);
                     Assert.Equal("Outdoor travel cute banana protector storage box", item.ProductDescription);
+                    Assert.Equal(4, item.Inventory);
                 },
                 item =>
                 {
@@ -134,12 +136,8 @@ namespace Composition.Tests
                     Assert.Equal(100, item.ProductPrice);
                     Assert.Equal("Nokia Lumia 635", item.ProductName);
                     Assert.Equal("Amazing phone, unfortunately not understood by market", item.ProductDescription);
+                    Assert.Equal(0, item.Inventory);
                 });
-            // Assert.Equal("Outdoor travel cute banana protector storage box", composedViewModel.ProductDescription);
-            // Assert.Equal(10, composedViewModel.ProductPrice);
-            // Assert.Equal(4, composedViewModel.ProductInventory);
-            // Assert.Equal(false, composedViewModel.ProductOutOfStock);
-            // Assert.Equal("Express Delivery, Regular mail", composedViewModel.ProductShippingOptions);
         }
     }
 }

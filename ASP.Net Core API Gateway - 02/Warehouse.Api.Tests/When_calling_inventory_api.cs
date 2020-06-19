@@ -53,5 +53,31 @@ namespace Warehouse.Api.Tests
             Assert.Equal(expectedStockItem.Inventory, stockItem.Inventory);
             Assert.Equal(expectedStockItem.ProductId, stockItem.ProductId);
         }
+
+        [Fact]
+        public async Task Get_products_by_ids_returns_expected_values()
+        {
+            // Arrange
+            var client = new WebApplicationFactoryWithWebHost<Startup>().CreateClient();
+
+            // Act
+            var response = await client.GetAsync("/api/inventory/products/1,2");
+            var stockItems = await response.Content.As<StockItem[]>();
+
+            // Assert
+            Assert.Collection(stockItems,
+                item =>
+                {
+                    Assert.Equal(1, item.Id);
+                    Assert.Equal(1, item.ProductId);
+                    Assert.Equal(4, item.Inventory);
+                },
+                item =>
+                {
+                    Assert.Equal(2, item.Id);
+                    Assert.Equal(2, item.ProductId);
+                    Assert.Equal(0, item.Inventory);
+                });
+        }
     }
 }
