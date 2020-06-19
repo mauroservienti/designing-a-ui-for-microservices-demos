@@ -2,7 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using ServiceComposer.AspNetCore;
-using ServiceComposer.AspNetCore.Gateway;
 
 namespace CompositionGateway
 {
@@ -10,17 +9,15 @@ namespace CompositionGateway
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpClient();
             services.AddRouting();
             services.AddViewModelComposition();
         }
 
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
-            app.RunCompositionGateway( routeBuilder=>
-            {
-                routeBuilder.MapComposableGet("{controller}/{id:int}");
-                routeBuilder.MapComposableGet("{controller}/{action}");
-            } );
+            app.UseRouting();
+            app.UseEndpoints(builder => builder.MapCompositionHandlers());
         }
     }
 }

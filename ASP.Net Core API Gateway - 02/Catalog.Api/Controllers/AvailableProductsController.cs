@@ -1,7 +1,7 @@
-﻿using Catalog.Data;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+using Catalog.Api.Data;
 
 namespace Catalog.Api.Controllers
 {
@@ -13,14 +13,12 @@ namespace Catalog.Api.Controllers
         [Route("products")]
         public IEnumerable<int> Get()
         {
-            using (var db = new MarketingContext())
-            {
-                var all = db.ProductsDetails
-                    .Select(p => p.Id)
-                    .ToArray();
+            using var db = new MarketingContext();
+            var all = db.ProductsDetails
+                .Select(p => p.Id)
+                .ToArray();
 
-                return all;
-            }
+            return all;
         }
     }
 }

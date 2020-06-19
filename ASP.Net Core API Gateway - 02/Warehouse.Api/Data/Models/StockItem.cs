@@ -1,4 +1,4 @@
-﻿namespace Warehouse.Data.Models
+﻿namespace Warehouse.Api.Data.Models
 {
     public class StockItem
     {

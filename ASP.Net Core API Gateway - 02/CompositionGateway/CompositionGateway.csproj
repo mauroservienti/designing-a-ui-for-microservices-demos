@@ -1,16 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.2.2" />
-    <PackageReference Include="ServiceComposer.AspNetCore" Version="0.0.12" />
+    <PackageReference Include="ServiceComposer.AspNetCore" Version="1.0.0-Beta.3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Catalog.ViewModelComposition\Catalog.ViewModelComposition.csproj" />
