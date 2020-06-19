@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using JsonUtils;
@@ -113,12 +114,27 @@ namespace Composition.Tests
 
             // Act
             var composedResponse = await compositionClient.GetAsync("/available/products");
-            dynamic[] availableProducts = await composedResponse.Content.AsExpandoArray();
+            dynamic availableProducts = await composedResponse.Content.AsExpando();
 
             // Assert
             Assert.True(composedResponse.IsSuccessStatusCode);
 
-            Assert.Equal(2, availableProducts.Length);
+            Assert.Equal(2, availableProducts.AvailableProducts.Count);
+            Assert.Collection((List<dynamic>) availableProducts.AvailableProducts,
+                item =>
+                {
+                    Assert.Equal(1, item.Id);
+                    Assert.Equal(10, item.ProductPrice);
+                    Assert.Equal("Banana Holder", item.ProductName);
+                    Assert.Equal("Outdoor travel cute banana protector storage box", item.ProductDescription);
+                },
+                item =>
+                {
+                    Assert.Equal(2, item.Id);
+                    Assert.Equal(100, item.ProductPrice);
+                    Assert.Equal("Nokia Lumia 635", item.ProductName);
+                    Assert.Equal("Amazing phone, unfortunately not understood by market", item.ProductDescription);
+                });
             // Assert.Equal("Outdoor travel cute banana protector storage box", composedViewModel.ProductDescription);
             // Assert.Equal(10, composedViewModel.ProductPrice);
             // Assert.Equal(4, composedViewModel.ProductInventory);

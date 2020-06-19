@@ -56,19 +56,6 @@ namespace Sales.Api.Tests
         public async Task Get_products_by_ids_returns_expected_values()
         {
             // Arrange
-            var expectedProductPrices = new[]
-            {
-                new ProductPrice()
-                {
-                    Id = 1,
-                    Price = 10.00m
-                },
-                new ProductPrice()
-                {
-                    Id = 2,
-                    Price = 100.00m,
-                }
-            };
             var client = new WebApplicationFactoryWithWebHost<Startup>().CreateClient();
 
             // Act
@@ -76,7 +63,17 @@ namespace Sales.Api.Tests
             var productPrices = await response.Content.As<ProductPrice[]>();
 
             // Assert
-            Assert.Equal(expectedProductPrices, productPrices);
+            Assert.Collection(productPrices,
+                item =>
+                {
+                    Assert.Equal(1, item.Id);
+                    Assert.Equal(10.00m, item.Price);
+                },
+                item =>
+                {
+                    Assert.Equal(2, item.Id);
+                    Assert.Equal(100.00m, item.Price);
+                });
         }
     }
 }
