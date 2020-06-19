@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using JsonUtils;
 using Newtonsoft.Json;
 using ServiceComposer.AspNetCore.Testing;
 using Shipping.Api.Data.Models;
@@ -62,8 +63,7 @@ namespace Shipping.Api.Tests
 
             // Act
             var response = await client.GetAsync("/api/shipping-options/product/1");
-            var responseString = await response.Content.ReadAsStringAsync();
-            var shippingOption = JsonConvert.DeserializeObject<ProductShippingOptions>(responseString);
+            var shippingOption = await response.Content.As<ProductShippingOptions>();
 
             // Assert
             Assert.Equal(expectedProductShippingOptions.Id, shippingOption.Id);

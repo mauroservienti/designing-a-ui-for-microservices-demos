@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonUtils", "..\shared\Json
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Api.Tests", "Sales.Api.Tests\Sales.Api.Tests.csproj", "{2C7331AF-EBA8-413D-AAEB-0961FBAB3033}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Api.Tests", "Catalog.Api.Tests\Catalog.Api.Tests.csproj", "{7CDF2CE4-75C8-4F54-87FA-E7779E226573}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{2C7331AF-EBA8-413D-AAEB-0961FBAB3033}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C7331AF-EBA8-413D-AAEB-0961FBAB3033}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C7331AF-EBA8-413D-AAEB-0961FBAB3033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CDF2CE4-75C8-4F54-87FA-E7779E226573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CDF2CE4-75C8-4F54-87FA-E7779E226573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CDF2CE4-75C8-4F54-87FA-E7779E226573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CDF2CE4-75C8-4F54-87FA-E7779E226573}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +129,7 @@ Global
 		{182754B3-3108-46C0-8D20-B26AADD6A7BE} = {68DCDBF3-BBC8-49D9-833D-9F521EF1AA56}
 		{0F157AD8-F621-4F74-914B-B56368FF84CD} = {A8EC4169-97B6-4241-8539-0729953B16EF}
 		{2C7331AF-EBA8-413D-AAEB-0961FBAB3033} = {68DCDBF3-BBC8-49D9-833D-9F521EF1AA56}
+		{7CDF2CE4-75C8-4F54-87FA-E7779E226573} = {68DCDBF3-BBC8-49D9-833D-9F521EF1AA56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D0078F3-1E11-49D2-AE2C-6EA7D61E1B06}

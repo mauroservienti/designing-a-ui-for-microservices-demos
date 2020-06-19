@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
+using JsonUtils;
 using Newtonsoft.Json;
 using ServiceComposer.AspNetCore.Testing;
 using Sales.Api.Data.Models;
@@ -46,8 +46,7 @@ namespace Sales.Api.Tests
 
             // Act
             var response = await client.GetAsync("/api/prices/product/1");
-            var responseString = await response.Content.ReadAsStringAsync();
-            var productPrice = JsonConvert.DeserializeObject<ProductPrice>(responseString);
+            var productPrice = await response.Content.As<ProductPrice>();
 
             // Assert
             Assert.Equal(expectedProductPrice.Id, productPrice.Id);

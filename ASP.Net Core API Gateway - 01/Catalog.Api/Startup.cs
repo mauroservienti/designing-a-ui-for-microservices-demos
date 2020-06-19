@@ -1,5 +1,4 @@
-﻿using Catalog.Api.Data;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,8 +16,6 @@ namespace Catalog.Api
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            MarketingContext.CreateSeedData();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

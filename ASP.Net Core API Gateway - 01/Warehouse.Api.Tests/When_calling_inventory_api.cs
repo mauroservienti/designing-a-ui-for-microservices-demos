@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
+using JsonUtils;
 using Newtonsoft.Json;
 using ServiceComposer.AspNetCore.Testing;
 using Warehouse.Api.Data.Models;
@@ -47,8 +47,7 @@ namespace Warehouse.Api.Tests
 
             // Act
             var response = await client.GetAsync("/api/inventory/product/1");
-            var responseString = await response.Content.ReadAsStringAsync();
-            var stockItem = JsonConvert.DeserializeObject<StockItem>(responseString);
+            var stockItem = await response.Content.As<StockItem>();
 
             // Assert
             Assert.Equal(expectedStockItem.Id, stockItem.Id);

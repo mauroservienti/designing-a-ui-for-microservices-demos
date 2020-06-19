@@ -13,12 +13,14 @@ namespace Composition.Tests
         readonly HttpClient _warehouseApiClient;
         readonly HttpClient _shippingApiClient;
         readonly HttpClient _salesApiClient;
+        private HttpClient _catalogApiClient;
 
         void IDisposable.Dispose()
         {
             Warehouse.Api.Data.WarehouseContext.DropDatabase();
             Shipping.Api.Data.ShippingContext.DropDatabase();
             Sales.Api.Data.SalesContext.DropDatabase();
+            Catalog.Api.Data.MarketingContext.DropDatabase();
         }
 
         public When_calling_composition_gateway()
@@ -34,6 +36,10 @@ namespace Composition.Tests
             Sales.Api.Data.SalesContext.CreateSeedData(Guid.NewGuid().ToString());
             var salesApi = new WebApplicationFactoryWithWebHost<Sales.Api.Startup>();
             _salesApiClient = salesApi.CreateClient();
+
+            Catalog.Api.Data.MarketingContext.CreateSeedData(Guid.NewGuid().ToString());
+            var catalogApi = new WebApplicationFactoryWithWebHost<Catalog.Api.Startup>();
+            _catalogApiClient = catalogApi.CreateClient();
         }
 
         [Fact]
@@ -50,6 +56,7 @@ namespace Composition.Tests
                             var val when val == typeof(Shipping.ViewModelComposition.ProductDetailsGetHandler).FullName => _shippingApiClient,
                             var val when val == typeof(Warehouse.ViewModelComposition.ProductDetailsGetHandler).FullName => _warehouseApiClient,
                             var val when val == typeof(Sales.ViewModelComposition.ProductDetailsGetHandler).FullName => _salesApiClient,
+                            var val when val == typeof(Catalog.ViewModelComposition.ProductDetailsGetHandler).FullName => _catalogApiClient,
                             _ => throw new NotSupportedException($"Missing HTTP client for {name}")
                         };
 
@@ -66,7 +73,11 @@ namespace Composition.Tests
             var composedResponse = await compositionClient.GetAsync("/products/details/1");
             dynamic composedViewModel = await composedResponse.Content.AsExpando();
 
+            // Assert
             Assert.True(composedResponse.IsSuccessStatusCode);
+
+            Assert.Equal("Banana Holder", composedViewModel.ProductName);
+            Assert.Equal("Outdoor travel cute banana protector storage box", composedViewModel.ProductDescription);
             Assert.Equal(10, composedViewModel.ProductPrice);
             Assert.Equal(4, composedViewModel.ProductInventory);
             Assert.Equal(false, composedViewModel.ProductOutOfStock);

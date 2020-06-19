@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore;
+﻿using Catalog.Api.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
@@ -8,6 +8,7 @@ namespace Catalog.Api
     {
         public static void Main(string[] args)
         {
+            MarketingContext.CreateSeedData();
             CreateHostBuilder(args).Build().Run();
         }
 

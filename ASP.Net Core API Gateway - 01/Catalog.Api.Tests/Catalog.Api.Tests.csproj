@@ -16,12 +16,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\shared\JsonUtils\JsonUtils.csproj" />
-      <ProjectReference Include="..\Warehouse.Api\Warehouse.Api.csproj" />
+        <ProjectReference Include="..\..\shared\JsonUtils\JsonUtils.csproj" />
+        <ProjectReference Include="..\Catalog.Api\Catalog.Api.csproj" />
     </ItemGroup>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="copy &quot;$(SolutionDir)Warehouse.Api\$(OutDir)Warehouse.Api.deps.json&quot; &quot;$(ProjectDir)$(OutDir)Warehouse.Api.deps.json&quot; /Y" />
+        <Exec Command="copy &quot;$(SolutionDir)Catalog.Api\$(OutDir)Catalog.Api.deps.json&quot; &quot;$(ProjectDir)$(OutDir)Catalog.Api.deps.json&quot; /Y" />
     </Target>
 
 </Project>
