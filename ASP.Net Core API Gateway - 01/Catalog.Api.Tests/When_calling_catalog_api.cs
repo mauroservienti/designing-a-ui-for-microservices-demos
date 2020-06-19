@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Catalog.Api;
 using Catalog.Api.Data;
-using Newtonsoft.Json;
 using ServiceComposer.AspNetCore.Testing;
 using Catalog.Api.Data.Models;
 using JsonUtils;

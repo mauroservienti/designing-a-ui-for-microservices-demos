@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using JsonUtils;
-using Newtonsoft.Json;
 using ServiceComposer.AspNetCore.Testing;
 using Warehouse.Api.Data.Models;
 using Xunit;
