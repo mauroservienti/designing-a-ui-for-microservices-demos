@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using JsonUtils;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using ServiceComposer.AspNetCore.Testing;
 using Xunit;
 
 namespace Composition.Tests
@@ -82,21 +83,6 @@ namespace Composition.Tests
             Assert.Equal(4, composedViewModel.ProductInventory);
             Assert.Equal(false, composedViewModel.ProductOutOfStock);
             Assert.Equal("Express Delivery, Regular mail", composedViewModel.ProductShippingOptions);
-        }
-    }
-
-    public class DelegateHttpClientFactory : IHttpClientFactory
-    {
-        private readonly Func<string, HttpClient> _httpClientProvider;
-
-        public DelegateHttpClientFactory(Func<string, HttpClient> httpClientProvider)
-        {
-            _httpClientProvider = httpClientProvider;
-        }
-
-        public HttpClient CreateClient(string name)
-        {
-            return _httpClientProvider(name);
         }
     }
 }
