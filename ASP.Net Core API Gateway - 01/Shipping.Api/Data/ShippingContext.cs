@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Shipping.Data.Models;
-using System.Linq;
+﻿using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Shipping.Api.Data.Models;
 
-namespace Shipping.Data
+namespace Shipping.Api.Data
 {
     public class ShippingContext : DbContext
     {

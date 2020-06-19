@@ -12,17 +12,5 @@
     <ProjectReference Include="..\Shipping.ViewModelComposition\Shipping.ViewModelComposition.csproj" />
     <ProjectReference Include="..\Warehouse.ViewModelComposition\Warehouse.ViewModelComposition.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="wwwroot\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Remove="wwwroot\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="wwwroot\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Remove="wwwroot\**" />
-  </ItemGroup>
 
 </Project>

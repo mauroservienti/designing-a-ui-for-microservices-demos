@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Sales.Api.Data;
 
 namespace Sales.Api
 {
@@ -8,6 +8,7 @@ namespace Sales.Api
     {
         public static void Main(string[] args)
         {
+            SalesContext.CreateSeedData();
             CreateHostBuilder(args).Build().Run();
         }
 

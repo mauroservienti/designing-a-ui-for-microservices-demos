@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using Shipping.Data;
+using Shipping.Api.Data;
 
 namespace Shipping.Api
 {

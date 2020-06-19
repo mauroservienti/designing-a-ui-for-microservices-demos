@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Sales.Api.Data;
 
 namespace Sales.Api
 {
@@ -17,8 +16,6 @@ namespace Sales.Api
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            SalesContext.CreateSeedData();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

@@ -10,7 +10,7 @@ namespace Warehouse.ViewModelComposition
         {
             options.AddServicesConfigurationHandler(typeof(ProductDetailsGetHandler), (type, services) =>
             {
-                services.AddHttpClient<ProductDetailsGetHandler>(client =>
+                services.AddHttpClient<ProductDetailsGetHandler>(typeof(ProductDetailsGetHandler).FullName, client =>
                 {
                     client.BaseAddress = new Uri("http://localhost:5003");
                 });

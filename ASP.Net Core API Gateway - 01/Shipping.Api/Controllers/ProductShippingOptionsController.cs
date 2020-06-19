@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Shipping.Data;
-using System;
-using System.Collections.Generic;
 using System.Linq;
+using Shipping.Api.Data;
 
 namespace Shipping.Api.Controllers
 {

@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JsonUtils\JsonUtils.csproj" />
+    <ProjectReference Include="..\..\shared\JsonUtils\JsonUtils.csproj" />
   </ItemGroup>
 
 </Project>

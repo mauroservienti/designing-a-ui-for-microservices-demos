@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using ServiceComposer.AspNetCore.Testing;
-using Shipping.Data.Models;
+using Shipping.Api.Data.Models;
 using Xunit;
 
 namespace Shipping.Api.Tests

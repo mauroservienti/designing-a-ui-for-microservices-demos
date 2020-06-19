@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using ServiceComposer.AspNetCore;
 
-namespace Shipping.ViewModelComposition
+namespace Sales.ViewModelComposition
 {
     public class ViewModelCompositionOptionsCustomization : IViewModelCompositionOptionsCustomization
     {
@@ -12,7 +12,7 @@ namespace Shipping.ViewModelComposition
             {
                 services.AddHttpClient<ProductDetailsGetHandler>(typeof(ProductDetailsGetHandler).FullName, client =>
                 {
-                    client.BaseAddress = new Uri("http://localhost:5004");
+                    client.BaseAddress = new Uri("http://localhost:5001");
                 });
             });
         }
