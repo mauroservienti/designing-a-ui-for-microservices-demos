@@ -10,7 +10,7 @@ internal class Program
     {
         var sdk = new DotnetSdkManager();
 
-        Target("default", DependsOn("Test-Demo-01", "Demo-02", "Demo-03", "Demo-04"));
+        Target("default", DependsOn("Test-Demo-01", "Test-Demo-02", "Demo-03", "Demo-04"));
 
         Target(
             "Build-Demo-01",
