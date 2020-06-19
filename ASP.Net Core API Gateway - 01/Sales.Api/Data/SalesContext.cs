@@ -1,28 +1,39 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Sales.Data.Models;
+using Sales.Api.Data.Models;
 
-namespace Sales.Data
+namespace Sales.Api.Data
 {
     public class SalesContext : DbContext
     {
-        public static void CreateSeedData()
-        {
-            using (var db = new SalesContext())
-            {
-                foreach (var productPrice in Initial.Data())
-                {
-                    db.ProductsPrices.Add(productPrice);
-                }
+        private static string _databaseName = "Sales";
 
-                db.SaveChanges();
+        internal static void CreateSeedData(string databaseName = null)
+        {
+            if (!string.IsNullOrWhiteSpace(databaseName))
+            {
+                _databaseName = databaseName;
             }
+
+            using var db = new SalesContext();
+            foreach (var productPrice in Initial.Data())
+            {
+                db.ProductsPrices.Add(productPrice);
+            }
+
+            db.SaveChanges();
+        }
+
+        internal static void DropDatabase()
+        {
+            using var db = new SalesContext();
+            db.Database.EnsureDeleted();
         }
 
         public DbSet<ProductPrice> ProductsPrices { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase(databaseName: "Sales");
+            optionsBuilder.UseInMemoryDatabase(databaseName: _databaseName);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -50,7 +61,6 @@ namespace Sales.Data
                     }
                 };
             }
-
         }
     }
 }

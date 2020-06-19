@@ -4,30 +4,29 @@ using ServiceComposer.AspNetCore;
 using System.Net.Http;
 using System.Threading.Tasks;
 using JsonUtils;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Sales.ViewModelComposition
 {
-    class ProductDetailsGetHandler : IHandleRequests
+    class ProductDetailsGetHandler : ICompositionRequestsHandler
     {
-        public bool Matches(RouteData routeData, string httpVerb, HttpRequest request)
-        {
-            var controller = (string)routeData.Values["controller"];
+        private readonly HttpClient _httpClient;
 
-            return HttpMethods.IsGet(httpVerb)
-                   && controller.ToLowerInvariant() == "products"
-                   && routeData.Values.ContainsKey("id");
+        public ProductDetailsGetHandler(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
         }
-
-        public async Task Handle(string requestId, dynamic vm, RouteData routeData, HttpRequest request)
+        [HttpGet("/products/details/{id}")]
+        public async Task Handle(HttpRequest request)
         {
-            var id = (string)routeData.Values["id"];
+            var id = (string)request.HttpContext.GetRouteData().Values["id"];
 
-            var url = $"http://localhost:5001/api/prices/product/{id}";
-            var client = new HttpClient();
-            var response = await client.GetAsync(url);
+            var url = $"/api/prices/product/{id}";
+            var response = await _httpClient.GetAsync(url);
 
             dynamic productPrice = await response.Content.AsExpando();
 
+            var vm = request.GetComposedResponseModel();
             vm.ProductPrice = productPrice.Price;
         }
     }

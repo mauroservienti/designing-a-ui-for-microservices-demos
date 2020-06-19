@@ -1,28 +1,43 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Warehouse.Data.Models;
+using Warehouse.Api.Data.Models;
 
-namespace Warehouse.Data
+namespace Warehouse.Api.Data
 {
     public class WarehouseContext : DbContext
     {
-        public static void CreateSeedData()
-        {
-            using (var db = new WarehouseContext())
-            {
-                foreach (var stockItem in Initial.Data())
-                {
-                    db.StockItems.Add(stockItem);
-                }
+        static string _databaseName = "Warehouse";
 
-                db.SaveChanges();
+        internal static void CreateSeedData(string databaseName = null)
+        {
+            if (!string.IsNullOrWhiteSpace(databaseName))
+            {
+                _databaseName = databaseName;
             }
+
+            using var db = new WarehouseContext();
+            foreach (var stockItem in Initial.Data())
+            {
+                db.StockItems.Add(stockItem);
+            }
+
+            db.SaveChanges();
+        }
+
+        internal static void DropDatabase()
+        {
+            using var db = new WarehouseContext();
+            db.Database.EnsureDeleted();
+        }
+
+        public WarehouseContext()
+        {
         }
 
         public DbSet<StockItem> StockItems { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase(databaseName: "Warehouse");
+            optionsBuilder.UseInMemoryDatabase(databaseName: _databaseName);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -32,7 +47,7 @@ namespace Warehouse.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        internal static class Initial
+        static class Initial
         {
             internal static StockItem[] Data()
             {
@@ -52,7 +67,6 @@ namespace Warehouse.Data
                     }
                 };
             }
-
         }
     }
 }
