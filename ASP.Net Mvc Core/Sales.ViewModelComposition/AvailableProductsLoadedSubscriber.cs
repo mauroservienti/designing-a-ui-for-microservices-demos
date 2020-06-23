@@ -5,32 +5,28 @@ using Microsoft.AspNetCore.Routing;
 using ServiceComposer.AspNetCore;
 using System;
 using System.Net.Http;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Catalog.ViewModelComposition
+namespace Sales.ViewModelComposition
 {
-    class AvailableProductsLoadedSubscriber : ISubscribeToCompositionEvents
+    class AvailableProductsLoadedSubscriber : ICompositionEventsSubscriber
     {
-        public bool Matches(RouteData routeData, string httpVerb, HttpRequest request)
-        {
-            var controller = (string)routeData.Values["controller"];
-            var action = (string)routeData.Values["action"];
+        private readonly HttpClient _httpClient;
 
-            return HttpMethods.IsGet(httpVerb)
-                   && controller.ToLowerInvariant() == "home"
-                   && action.ToLowerInvariant() == "index"
-                   && !routeData.Values.ContainsKey("id");
+        public AvailableProductsLoadedSubscriber(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
         }
 
-        public void Subscribe(IPublishCompositionEvents publisher)
+        [HttpGet("/available/products")]
+        public void Subscribe(ICompositionEventsPublisher publisher)
         {
-            publisher.Subscribe<AvailableProductsLoaded>(async (requestId, pageViewModel, @event, rd, req) =>
+            publisher.Subscribe<AvailableProductsLoaded>(async (@event, request) =>
             {
                 var ids = String.Join(",", @event.AvailableProductsViewModel.Keys);
 
-                var url = $"http://localhost:5001/api/prices/products/{ids}";
-                var client = new HttpClient();
-
-                var response = await client.GetAsync(url);
+                var url = $"/api/prices/products/{ids}";
+                var response = await _httpClient.GetAsync(url);
 
                 dynamic[] productPrices = await response.Content.AsExpandoArray();
 

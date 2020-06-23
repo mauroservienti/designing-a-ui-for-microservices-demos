@@ -1,6 +1,5 @@
 ﻿using Catalog.ViewModelComposition.Events;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
 using ServiceComposer.AspNetCore;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -8,31 +7,29 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using JsonUtils;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.ViewModelComposition
 {
-    class AvailableProductsGetHandler : IHandleRequests
+    class AvailableProductsGetHandler : ICompositionRequestsHandler
     {
-        public bool Matches(RouteData routeData, string httpVerb, HttpRequest request)
-        {
-            var controller = (string)routeData.Values["controller"];
-            var action = (string)routeData.Values["action"];
+        private readonly HttpClient _httpClient;
 
-            return HttpMethods.IsGet(httpVerb)
-                   && controller.ToLowerInvariant() == "home"
-                   && action.ToLowerInvariant() == "index"
-                   && !routeData.Values.ContainsKey("id");
+        public AvailableProductsGetHandler(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
         }
 
-        public async Task Handle(string requestId, dynamic vm, RouteData routeData, HttpRequest request)
+        [HttpGet("/available/products")]
+        public async Task Handle(HttpRequest request)
         {
-            var url = $"http://localhost:5002/api/available/products";
-            var client = new HttpClient();
-            var response = await client.GetAsync(url);
+            var url = $"/api/available/products";
+            var response = await _httpClient.GetAsync(url);
 
             var availableProducts = await response.Content.As<int[]>();
             var availableProductsViewModel = MapToDictionary(availableProducts);
 
+            var vm = request.GetComposedResponseModel();
             await vm.RaiseEvent(new AvailableProductsLoaded()
             {
                 AvailableProductsViewModel = availableProductsViewModel
