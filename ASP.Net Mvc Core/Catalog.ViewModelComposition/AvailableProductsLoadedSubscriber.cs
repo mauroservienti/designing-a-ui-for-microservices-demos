@@ -16,7 +16,7 @@ namespace Catalog.ViewModelComposition
             _httpClient = httpClient;
         }
 
-        [HttpGet("/home/index")]
+        [HttpGet("/")]
         public void Subscribe(ICompositionEventsPublisher publisher)
         {
             publisher.Subscribe<AvailableProductsLoaded>(async (@event, request) =>
