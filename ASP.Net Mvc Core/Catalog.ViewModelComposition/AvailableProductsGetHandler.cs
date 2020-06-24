@@ -20,7 +20,7 @@ namespace Catalog.ViewModelComposition
             _httpClient = httpClient;
         }
 
-        [HttpGet("/available/products")]
+        [HttpGet("/home/index")]
         public async Task Handle(HttpRequest request)
         {
             var url = $"/api/available/products";
