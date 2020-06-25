@@ -55,7 +55,7 @@
     
         <script src="/lib/jquery/dist/jquery.js"></script>
         <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="/js/site.js?v=EWaMeWsJBYWmL2g_KkgXZQ5nPe-a3Ichp0LEgzXczKo"></script>
+        <script src="/js/site.js?v=|version-scrubbed|"></script>
     
     
 

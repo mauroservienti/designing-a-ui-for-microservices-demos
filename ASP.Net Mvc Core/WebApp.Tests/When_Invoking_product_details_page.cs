@@ -84,7 +84,13 @@ namespace WebApp.Tests
 
             // Assert
             Assert.True(detailsResponse.IsSuccessStatusCode);
-            Approvals.Verify(result);
+            Approvals.Verify(result, received =>
+            {
+                var begin = received.LastIndexOf("site.js?v=") + 10;
+                var end = received.LastIndexOf("\"></script>");
+
+                return $"{received.Substring(0,begin)}|version-scrubbed|{received.Substring(end)}";
+            });
         }
     }
 }

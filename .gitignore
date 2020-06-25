@@ -2,6 +2,8 @@ bower_components/
 node_modules/
 bower_cmps/
 
+*.orig
+
 # API Approvals
 *.received.txt
 
