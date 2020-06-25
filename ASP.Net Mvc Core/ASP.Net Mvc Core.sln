@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonUtils", "..\shared\JsonUtils\JsonUtils.csproj", "{630C12E7-A2BA-49EC-A8A1-CFEAD25C8109}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{900D7EA7-8C57-4CF7-94B5-1D8625367EC9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__shared", "__shared", "{900D7EA7-8C57-4CF7-94B5-1D8625367EC9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Api", "Catalog.Api\Catalog.Api.csproj", "{66B7DB3B-E5C4-4741-B332-3D6C57D98C86}"
 EndProject
@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.ViewModelCompositio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{261EEEC3-2652-4B8A-9414-0D07BA57AFE3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B691F984-AEC5-45AD-9C98-FE5743C206F4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__Tests", "__Tests", "{B691F984-AEC5-45AD-9C98-FE5743C206F4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationUtils", "..\shared\ConfigurationUtils\ConfigurationUtils.csproj", "{0B19C1CB-A713-463D-9B55-B8612F4DC53A}"
 EndProject
