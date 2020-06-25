@@ -1,11 +1,18 @@
 version: '{build}'
 image: Visual Studio 2019
-branches:
-  only:
-    - master
+
 skip_branch_with_pr: true
-build_script:
-- cmd: ./build.cmd
 environment:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   NUGET_XMLDOC_MODE: skip
+
+test: off
+deploy: off
+
+branches:
+  only:
+    - master
+
+build_script:
+  - cmd: ./build.cmd
+  
