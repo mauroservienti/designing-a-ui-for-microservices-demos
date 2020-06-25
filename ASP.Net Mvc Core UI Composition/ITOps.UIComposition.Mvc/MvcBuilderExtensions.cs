@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
 
 namespace ITOps.UIComposition.Mvc
 {
@@ -29,7 +29,7 @@ namespace ITOps.UIComposition.Mvc
 
             assemblies.ForEach(a =>
             {
-                builder.Services.Configure<RazorViewEngineOptions>(options =>
+                builder.Services.Configure<MvcRazorRuntimeCompilationOptions>(options =>
                 {
                     options.FileProviders.Add(new EmbeddedFileProvider(a.Assembly, a.BaseNamespace));
                 });

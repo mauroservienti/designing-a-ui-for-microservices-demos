@@ -1,12 +1,10 @@
-﻿using ServiceComposer.AspNetCore;
-using ServiceComposer.AspNetCore.Mvc;
-using ServiceComposer.AspNetCore.Gateway;
+﻿using ITOps.UIComposition.Mvc;
+using ServiceComposer.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using ITOps.UIComposition.Mvc;
 
 namespace WebApp
 {
@@ -14,24 +12,33 @@ namespace WebApp
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().AddUIComposition();
+            services.AddRouting();
+            services.AddControllersWithViews()
+                .AddRazorRuntimeCompilation()
+                .AddUIComposition();
             services.AddViewModelComposition(options=>
             {
-                options.AddMvcSupport();
+                options.EnableCompositionOverControllers();
             });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            app.UseDeveloperExceptionPage();
-            app.UseBrowserLink();
-
-            app.UseStaticFiles();
-            app.UseMvc(routes =>
+            if (env.IsDevelopment())
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+            }
+
+            app.UseRouting();
+            app.UseStaticFiles();
+            app.UseEndpoints(builder =>
+            {
+                builder.MapControllers();
+                builder.MapCompositionHandlers();
             });
         }
     }

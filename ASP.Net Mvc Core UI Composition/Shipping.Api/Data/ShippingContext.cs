@@ -1,33 +1,44 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Shipping.Data.Models;
-using System.Linq;
+﻿using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Shipping.Api.Data.Models;
 
-namespace Shipping.Data
+namespace Shipping.Api.Data
 {
     public class ShippingContext : DbContext
     {
-        public static void CreateSeedData()
+        static string _databaseName = "Shipping";
+
+        internal static void CreateSeedData(string databaseName = null)
         {
-            using (var db = new ShippingContext())
+            if (!string.IsNullOrWhiteSpace(databaseName))
             {
-                var options = Initial.ShippingOptions();
-
-                foreach (var productShippingOptions in ShippingContext.Initial.ProductShippingOptions())
-                {
-                    var optionsForThisProduct = options.Where(o => o.ProductShippingOptionsId == productShippingOptions.Id);
-                    productShippingOptions.Options.AddRange(optionsForThisProduct);
-                    db.ProductShippingOptions.Add(productShippingOptions);
-                }
-
-                db.SaveChanges();
+                _databaseName = databaseName;
             }
+
+            using var db = new ShippingContext();
+            var options = Initial.ShippingOptions();
+
+            foreach (var productShippingOptions in ShippingContext.Initial.ProductShippingOptions())
+            {
+                var optionsForThisProduct = options.Where(o => o.ProductShippingOptionsId == productShippingOptions.Id);
+                productShippingOptions.Options.AddRange(optionsForThisProduct);
+                db.ProductShippingOptions.Add(productShippingOptions);
+            }
+
+            db.SaveChanges();
+        }
+
+        internal static void DropDatabase()
+        {
+            using var db = new ShippingContext();
+            db.Database.EnsureDeleted();
         }
 
         public DbSet<ProductShippingOptions> ProductShippingOptions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase(databaseName: "Shipping");
+            optionsBuilder.UseInMemoryDatabase(databaseName: _databaseName);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

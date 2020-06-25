@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Available Products - WebApp</title>
+
+    
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="/css/site.css" />
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">WebApp</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        
+<div class="jumbotron">
+    <h2>Branding - Mvc Core Demo</h2>
+</div>
+
+<h2>Available products</h2>
+<ul>
+    <li>
+        <a href="/products/details/1">Banana Holder</a>,
+        <span>$10</span>
+    </li>
+    <li>
+        <a href="/products/details/2">Nokia Lumia 635</a>,
+        <span>$100</span>
+    </li>
+</ul>
+
+        <hr />
+        <footer>
+            <p>&copy; 2019 - WebApp</p>
+        </footer>
+    </div>
+
+    
+        <script src="/lib/jquery/dist/jquery.js"></script>
+        <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="/js/site.js?v=|version-scrubbed|"></script>
+    
+    
+
+    
+</body>
+</html>
