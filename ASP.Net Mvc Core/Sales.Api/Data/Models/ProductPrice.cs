@@ -1,4 +1,4 @@
-﻿namespace Sales.Data.Models
+﻿namespace Sales.Api.Data.Models
 {
     public class ProductPrice
     {
