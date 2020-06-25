@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Shipping.Data.Models
+namespace Shipping.Api.Data.Models
 {
     public class ProductShippingOptions
     {

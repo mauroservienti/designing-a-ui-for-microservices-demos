@@ -1,15 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="ServiceComposer.AspNetCore" Version="0.0.12" />
+    <PackageReference Include="ServiceComposer.AspNetCore" Version="1.0.0-Beta.4" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\shared\ConfigurationUtils\ConfigurationUtils.csproj" />
     <ProjectReference Include="..\..\shared\JsonUtils\JsonUtils.csproj" />
     <ProjectReference Include="..\Catalog.ViewModelComposition.Events\Catalog.ViewModelComposition.Events.csproj" />
   </ItemGroup>

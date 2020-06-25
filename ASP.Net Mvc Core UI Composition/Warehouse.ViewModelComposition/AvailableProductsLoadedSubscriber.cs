@@ -1,36 +1,29 @@
-﻿using JsonUtils;
+﻿﻿using JsonUtils;
 using Catalog.ViewModelComposition.Events;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
-using ServiceComposer.AspNetCore;
-using System;
-using System.Net.Http;
+ using ServiceComposer.AspNetCore;
+ using System.Net.Http;
+ using Microsoft.AspNetCore.Mvc;
 
-namespace Warehouse.ViewModelComposition
+ namespace Warehouse.ViewModelComposition
 {
-    class AvailableProductsLoadedSubscriber : ISubscribeToCompositionEvents
+    class AvailableProductsLoadedSubscriber : ICompositionEventsSubscriber
     {
-        public bool Matches(RouteData routeData, string httpVerb, HttpRequest request)
-        {
-            var controller = (string)routeData.Values["controller"];
-            var action = (string)routeData.Values["action"];
+        private readonly HttpClient _httpClient;
 
-            return HttpMethods.IsGet(httpVerb)
-                   && controller.ToLowerInvariant() == "home"
-                   && action.ToLowerInvariant() == "index"
-                   && !routeData.Values.ContainsKey("id");
+        public AvailableProductsLoadedSubscriber(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
         }
 
-        public void Subscribe(IPublishCompositionEvents publisher)
+        [HttpGet("/")]
+        public void Subscribe(ICompositionEventsPublisher publisher)
         {
-            publisher.Subscribe<AvailableProductsLoaded>(async (requestId, pageViewModel, @event, rd, req) =>
+            publisher.Subscribe<AvailableProductsLoaded>(async (@event, request) =>
             {
-                var ids = String.Join(",", @event.AvailableProductsViewModel.Keys);
+                var ids = string.Join(",", @event.AvailableProductsViewModel.Keys);
 
-                var url = $"http://localhost:5003/api/inventory/products/{ids}";
-                var client = new HttpClient();
-
-                var response = await client.GetAsync(url);
+                var url = $"/api/inventory/products/{ids}";
+                var response = await _httpClient.GetAsync(url);
 
                 dynamic[] stockItems = await response.Content.AsExpandoArray();
 

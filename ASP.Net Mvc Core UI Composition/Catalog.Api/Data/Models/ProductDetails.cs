@@ -1,4 +1,4 @@
-﻿namespace Catalog.Data.Models
+﻿namespace Catalog.Api.Data.Models
 {
     public class ProductDetails
     {
