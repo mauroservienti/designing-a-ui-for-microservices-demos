@@ -2,10 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApp.Controllers
 {
-    [Route("[controller]")]
+    [Route("products")]
     public class ProductsController : Controller
     {
-        [HttpGet("/details/{id}")]
+        [HttpGet("details/{id}")]
         public IActionResult Details(int id)
         {
             return View();

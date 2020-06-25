@@ -2,7 +2,6 @@
 
 namespace WebApp.Controllers
 {
-    [Route("[controller]")]
     public class HomeController : Controller
     {
         [HttpGet("/")]

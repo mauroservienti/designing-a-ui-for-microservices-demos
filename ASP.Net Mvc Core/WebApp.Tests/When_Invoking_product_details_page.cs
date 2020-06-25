@@ -12,7 +12,7 @@ using Xunit;
 namespace WebApp.Tests
 {
     [Collection("Sequential")]
-    public class When_Invoking_home_page: IDisposable
+    public class When_Invoking_product_details_page: IDisposable
     {
         readonly HttpClient _warehouseApiClient;
         readonly HttpClient _shippingApiClient;
@@ -27,7 +27,7 @@ namespace WebApp.Tests
             Catalog.Api.Data.MarketingContext.DropDatabase();
         }
 
-        public When_Invoking_home_page()
+        public When_Invoking_product_details_page()
         {
             Warehouse.Api.Data.WarehouseContext.CreateSeedData(Guid.NewGuid().ToString());
             var warehouseApi = new WebApplicationFactoryWithWebHost<Warehouse.Api.Startup>();
@@ -49,7 +49,7 @@ namespace WebApp.Tests
         [Fact]
         [UseReporter(typeof(DiffReporter))]
         [MethodImpl(MethodImplOptions.NoInlining)]
-        public async Task Should_render_available_products()
+        public async Task Should_render_expected_product()
         {
             // Arrange
             var webApp = new WebApplicationFactoryWithWebHost<WebApp.Startup>
@@ -79,11 +79,11 @@ namespace WebApp.Tests
             var webAppClient = webApp.CreateClient();
 
             // Act
-            var homeResponse = await webAppClient.GetAsync("/");
-            var result = await homeResponse.Content.ReadAsStringAsync();
+            var detailsResponse = await webAppClient.GetAsync("/products/details/1");
+            var result = await detailsResponse.Content.ReadAsStringAsync();
 
             // Assert
-            Assert.True(homeResponse.IsSuccessStatusCode);
+            Assert.True(detailsResponse.IsSuccessStatusCode);
             Approvals.Verify(result);
         }
     }

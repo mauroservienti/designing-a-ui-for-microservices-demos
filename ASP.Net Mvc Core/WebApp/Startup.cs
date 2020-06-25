@@ -1,9 +1,6 @@
 ﻿using ServiceComposer.AspNetCore;
-using ServiceComposer.AspNetCore.Mvc;
-using ServiceComposer.AspNetCore.Gateway;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -18,7 +15,7 @@ namespace WebApp
             services.AddControllersWithViews();
             services.AddViewModelComposition(options=>
             {
-                options.AddMvcSupport();
+                options.EnableCompositionOverControllers();
             });
         }
 
@@ -35,7 +32,11 @@ namespace WebApp
 
             app.UseRouting();
             app.UseStaticFiles();
-            app.UseEndpoints(builder => builder.MapControllers());
+            app.UseEndpoints(builder =>
+            {
+                builder.MapControllers();
+                builder.MapCompositionHandlers();
+            });
         }
     }
 }
