@@ -57,7 +57,7 @@ To run this sample ensure that the following projects are set as startup project
 
 ## Note
 
-All four solutions contains integration tests demonstrating how to test composition scenarios.
+All four solutions contain integration tests demonstrating how to test composition scenarios.
 
 To simplify as much as possible the sample, frontend applications, such as `CompositionGateway` and `WebApp`, directly reference ViewModel Composition and UI Composition assemblies. This allows also to avoid the usage of Visual Studio post build events, that at the time of this writing are [affected by a bug](https://github.com/dotnet/sdk/issues/677) when used in combination with .NET Core, causing events variable to not be populated as expected.
 
