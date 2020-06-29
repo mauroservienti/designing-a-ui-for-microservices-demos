@@ -39,13 +39,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__Shared", "__Shared", "{A8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composition.Tests", "Composition.Tests\Composition.Tests.csproj", "{182754B3-3108-46C0-8D20-B26AADD6A7BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonUtils", "..\shared\JsonUtils\JsonUtils.csproj", "{0F157AD8-F621-4F74-914B-B56368FF84CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonUtils", "JsonUtils\JsonUtils.csproj", "{0F157AD8-F621-4F74-914B-B56368FF84CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Api.Tests", "Sales.Api.Tests\Sales.Api.Tests.csproj", "{2C7331AF-EBA8-413D-AAEB-0961FBAB3033}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Api.Tests", "Catalog.Api.Tests\Catalog.Api.Tests.csproj", "{7CDF2CE4-75C8-4F54-87FA-E7779E226573}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationUtils", "..\shared\ConfigurationUtils\ConfigurationUtils.csproj", "{6A3B9211-5B6E-4CBD-8E6A-03D6A941E0A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationUtils", "ConfigurationUtils\ConfigurationUtils.csproj", "{6A3B9211-5B6E-4CBD-8E6A-03D6A941E0A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
