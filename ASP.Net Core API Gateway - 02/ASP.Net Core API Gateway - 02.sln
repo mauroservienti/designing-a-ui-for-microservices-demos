@@ -39,7 +39,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__Shared", "__Shared", "{A8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composition.Tests", "Composition.Tests\Composition.Tests.csproj", "{182754B3-3108-46C0-8D20-B26AADD6A7BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonUtils", "..\shared\JsonUtils\JsonUtils.csproj", "{0F157AD8-F621-4F74-914B-B56368FF84CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonUtils", "JsonUtils\JsonUtils.csproj", "{0F157AD8-F621-4F74-914B-B56368FF84CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Api.Tests", "Sales.Api.Tests\Sales.Api.Tests.csproj", "{2C7331AF-EBA8-413D-AAEB-0961FBAB3033}"
 EndProject
@@ -47,7 +47,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Api.Tests", "Catalo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.ViewModelComposition.Events", "Catalog.ViewModelComposition.Events\Catalog.ViewModelComposition.Events.csproj", "{FB5B4366-EE04-4ADF-A2CA-3AE043D048E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationUtils", "..\shared\ConfigurationUtils\ConfigurationUtils.csproj", "{6F79D384-CA6E-48F0-8703-8BFD57029926}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationUtils", "ConfigurationUtils\ConfigurationUtils.csproj", "{6F79D384-CA6E-48F0-8703-8BFD57029926}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

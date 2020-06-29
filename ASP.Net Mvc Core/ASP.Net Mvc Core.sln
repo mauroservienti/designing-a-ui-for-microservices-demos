@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonUtils", "..\shared\JsonUtils\JsonUtils.csproj", "{630C12E7-A2BA-49EC-A8A1-CFEAD25C8109}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonUtils", "JsonUtils\JsonUtils.csproj", "{630C12E7-A2BA-49EC-A8A1-CFEAD25C8109}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__shared", "__shared", "{900D7EA7-8C57-4CF7-94B5-1D8625367EC9}"
 EndProject
@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__Tests", "__Tests", "{B691F984-AEC5-45AD-9C98-FE5743C206F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationUtils", "..\shared\ConfigurationUtils\ConfigurationUtils.csproj", "{0B19C1CB-A713-463D-9B55-B8612F4DC53A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationUtils", "ConfigurationUtils\ConfigurationUtils.csproj", "{0B19C1CB-A713-463D-9B55-B8612F4DC53A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Api.Tests", "Catalog.Api.Tests\Catalog.Api.Tests.csproj", "{6979ED08-D9EA-481D-B5B5-61927FCFCB0D}"
 EndProject

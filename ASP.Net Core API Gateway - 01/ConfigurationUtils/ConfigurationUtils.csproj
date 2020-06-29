@@ -5,7 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="ServiceComposer.AspNetCore" Version="1.0.0-Beta.4" />
+      <PackageReference Include="ServiceComposer.AspNetCore" Version="1.0.0" />
     </ItemGroup>
 
 </Project>

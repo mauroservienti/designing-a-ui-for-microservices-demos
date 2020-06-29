@@ -6,12 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="ServiceComposer.AspNetCore" Version="1.0.0-Beta.4" />
+    <PackageReference Include="ServiceComposer.AspNetCore" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\shared\ConfigurationUtils\ConfigurationUtils.csproj" />
-    <ProjectReference Include="..\..\shared\JsonUtils\JsonUtils.csproj" />
+    <ProjectReference Include="..\ConfigurationUtils\ConfigurationUtils.csproj" />
+    <ProjectReference Include="..\JsonUtils\JsonUtils.csproj" />
     <ProjectReference Include="..\Catalog.ViewModelComposition.Events\Catalog.ViewModelComposition.Events.csproj" />
   </ItemGroup>
 

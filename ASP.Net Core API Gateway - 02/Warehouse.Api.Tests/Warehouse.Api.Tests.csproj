@@ -16,7 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\shared\JsonUtils\JsonUtils.csproj" />
+      <ProjectReference Include="..\JsonUtils\JsonUtils.csproj" />
       <ProjectReference Include="..\Warehouse.Api\Warehouse.Api.csproj" />
     </ItemGroup>
 
