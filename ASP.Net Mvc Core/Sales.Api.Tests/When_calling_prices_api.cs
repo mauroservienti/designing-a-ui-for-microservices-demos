@@ -23,7 +23,7 @@ namespace Sales.Api.Tests
         public async Task Get_product_should_return_200()
         {
             // Arrange
-            var client = new WebApplicationFactoryWithWebHost<Startup>().CreateClient();
+            using var client = new WebApplicationFactoryWithWebHost<Startup>().CreateClient();
 
             // Act
             var response = await client.GetAsync("/api/prices/product/1");
