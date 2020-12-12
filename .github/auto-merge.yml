@@ -1,17 +1,3 @@
-rules:
-- requiredAuthor: dependabot
-  minApprovals:
-    NONE: 0
-- minApprovals:
-    OWNER: 1
-  
-# must be enabled as a merge option in the repository settings
-mergeMethod: squash
-
-# report bot status details as a check on the PR
-reportStatus: true
-
-deleteBranchAfterMerge: true
-
-blockingLabels:
-- blocked
+- match:
+    dependency_type: all
+    update_type: all
