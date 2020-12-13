@@ -7,7 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="5.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.0" />
-    <PackageReference Include="ServiceComposer.AspNetCore" Version="1.7.1-pr.196.build-id.36810667.alpha.0.2" />
+    <PackageReference Include="ServiceComposer.AspNetCore" Version="1.7.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Catalog.ViewModelComposition\Catalog.ViewModelComposition.csproj" />
