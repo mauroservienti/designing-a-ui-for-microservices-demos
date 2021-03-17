@@ -11,7 +11,7 @@ jobs:
         uses: WyriHaximus/github-action-wait-for-status@v1
         with:
           ignoreActions: Dependabot Auto Merge
-          checkInterval: 13
+          checkInterval: 90
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Merge me!
