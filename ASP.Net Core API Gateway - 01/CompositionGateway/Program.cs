@@ -23,6 +23,9 @@ namespace CompositionGateway
                         configurationBuilder.AddJsonFile(file, optional: true, reloadOnChange: true);
                     }
                 })
+                .UseDefaultServiceProvider((context, options) => {
+                    options.ValidateOnBuild = false;
+                })
                 .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
     }
 }
