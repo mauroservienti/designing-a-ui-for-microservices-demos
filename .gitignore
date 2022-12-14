@@ -28,3 +28,6 @@ x86/
 
 # Visual Studio cache/options directory
 .vs/
+
+# Rider cache/options directory
+.idea/
