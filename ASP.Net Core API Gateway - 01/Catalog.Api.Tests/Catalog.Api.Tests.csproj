@@ -19,9 +19,5 @@
         <ProjectReference Include="..\JsonUtils\JsonUtils.csproj" />
         <ProjectReference Include="..\Catalog.Api\Catalog.Api.csproj" />
     </ItemGroup>
-
-    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-        <Exec Command="copy &quot;$(SolutionDir)Catalog.Api\$(OutDir)Catalog.Api.deps.json&quot; &quot;$(ProjectDir)$(OutDir)Catalog.Api.deps.json&quot; /Y" />
-    </Target>
-
+    
 </Project>
