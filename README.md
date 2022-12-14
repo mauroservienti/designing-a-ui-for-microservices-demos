@@ -6,7 +6,7 @@ ViewModel Composition is deeply discussed on my blog in the [ViewModel Compositi
 
 ## Requirements
 
-* [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0)
+* [.NET 7](https://dotnet.microsoft.com/download/dotnet/7.0)
 
 ## ASP.Net Core API Gateway - demos
 
