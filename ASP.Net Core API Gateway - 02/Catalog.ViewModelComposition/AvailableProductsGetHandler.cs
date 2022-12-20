@@ -29,8 +29,9 @@ namespace Catalog.ViewModelComposition
             var availableProducts = await response.Content.As<int[]>();
             var availableProductsViewModel = MapToDictionary(availableProducts);
 
+            var context = request.GetCompositionContext();
             var vm = request.GetComposedResponseModel();
-            await vm.RaiseEvent(new AvailableProductsLoaded()
+            await context.RaiseEvent(new AvailableProductsLoaded()
             {
                 AvailableProductsViewModel = availableProductsViewModel
             });
