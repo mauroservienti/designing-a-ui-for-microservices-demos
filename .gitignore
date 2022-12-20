@@ -28,3 +28,6 @@ x86/
 
 # Visual Studio cache/options directory
 .vs/
+
+# Jetbrains cache/options directory
+.idea/

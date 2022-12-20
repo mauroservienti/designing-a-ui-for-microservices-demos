@@ -20,8 +20,4 @@
       <ProjectReference Include="..\Shipping.Api\Shipping.Api.csproj" />
     </ItemGroup>
 
-    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-        <Exec Command="copy &quot;$(SolutionDir)Shipping.Api\$(OutDir)Shipping.Api.deps.json&quot; &quot;$(ProjectDir)$(OutDir)Shipping.Api.deps.json&quot; /Y" />
-    </Target>
-
 </Project>
