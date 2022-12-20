@@ -29,18 +29,18 @@ jobs:
             7.0.x
             6.0.x
       - name: Build "ASP.Net Core API Gateway - 01"
-        run: dotnet build "src/ASP.Net Core API Gateway - 01" --configuration Release
+        run: dotnet build "ASP.Net Core API Gateway - 01" --configuration Release
       - name: Tests "ASP.Net Core API Gateway - 01"
-        run: dotnet test "src/ASP.Net Core API Gateway - 01" --configuration Release --no-build
+        run: dotnet test "ASP.Net Core API Gateway - 01" --configuration Release --no-build
       - name: Build "ASP.Net Core API Gateway - 02"
-        run: dotnet build "src/ASP.Net Core API Gateway - 02" --configuration Release
+        run: dotnet build "ASP.Net Core API Gateway - 02" --configuration Release
       - name: Tests "ASP.Net Core API Gateway - 02"
-        run: dotnet test "src/ASP.Net Core API Gateway - 02" --configuration Release --no-build
+        run: dotnet test "ASP.Net Core API Gateway - 02" --configuration Release --no-build
       - name: Build "ASP.Net Mvc Core"
-        run: dotnet build "src/ASP.Net Mvc Core" --configuration Release
+        run: dotnet build "ASP.Net Mvc Core" --configuration Release
       - name: Tests "ASP.Net Mvc Core"
-        run: dotnet test "src/ASP.Net Mvc Core" --configuration Release --no-build
+        run: dotnet test "ASP.Net Mvc Core" --configuration Release --no-build
       - name: Build "ASP.Net Mvc Core UI Composition"
-        run: dotnet build "src/ASP.Net Mvc Core UI Composition" --configuration Release
+        run: dotnet build "ASP.Net Mvc Core UI Composition" --configuration Release
       - name: Tests "ASP.Net Mvc Core UI Composition"
-        run: dotnet test "src/ASP.Net Mvc Core UI Composition" --configuration Release --no-build
+        run: dotnet test "ASP.Net Mvc Core UI Composition" --configuration Release --no-build
