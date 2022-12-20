@@ -24,8 +24,4 @@
         <ProjectReference Include="..\Warehouse.Api\Warehouse.Api.csproj" />
     </ItemGroup>
 
-    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-        <Exec Command="copy &quot;$(SolutionDir)CompositionGateway\$(OutDir)CompositionGateway.deps.json&quot; &quot;$(ProjectDir)$(OutDir)CompositionGateway.deps.json&quot; /Y" />
-    </Target>
-
 </Project>
