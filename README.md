@@ -24,13 +24,6 @@ To run this sample ensure that the following projects are set as startup project
 * `Catalog.Api`
 * `CompositionGateway`
 
-As client to test the funzionality a REST client such as [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) can be used.
-
-* `ASP.Net Core API Gateway - 01` demoes how single items composition works
-* `ASP.Net Core API Gateway - 02` demoes how single items and items list composition works
-
-The [postman-collection.json](postman-collection.json) file can be imported into Postman, creating a collection with all the HTTP requests needed to test both demos.
-
 ## ASP.Net Mvc Core - Demo
 
 `WebApp` project is a .Net Core Mvc app that composes HTTP requests to multiple backends directly in Mvc Views as Controllers are invoked. This demo implements ViewModel Composition concepts introducing the concept of Branding as a contract at the UI level.
@@ -60,3 +53,7 @@ To run this sample ensure that the following projects are set as startup project
 All four solutions contain integration tests demonstrating how to test composition scenarios.
 
 To simplify as much as possible the sample, frontend applications, such as `CompositionGateway` and `WebApp`, directly reference ViewModel Composition and UI Composition assemblies.
+
+### How to run demos
+
+The repository root contains a [request.http](request.http) file listing some test requests. It's possible to use VS Code to execute requests by adding the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
