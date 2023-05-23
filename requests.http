@@ -1,0 +1,28 @@
+### -----------------------
+### Single item composition
+### -----------------------
+
+### Sales: Product #1 - Price
+GET http://localhost:5001/api/prices/product/1
+
+### Catalog: Product #1 - Details",
+GET http://localhost:5002/api/product-details/product/1
+
+### Shipping: Product #1 - Shipping Options",
+GET http://localhost:5004/api/shipping-options/product/1
+
+### Warehouse: Product #1 - Inventory
+GET http://localhost:5003/api/inventory/product/1
+
+### [Composed] Product #1
+GET http://localhost:4457/products/details/1
+
+### --------------------------
+### Lists composition
+### --------------------------
+
+### Catalog: Available Products
+GET http://localhost:5002/api/available/products
+
+### [Composed] Available Products
+GET http://localhost:4457/available/products
