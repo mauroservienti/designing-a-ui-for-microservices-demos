@@ -1,0 +1,12 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-dotnettools.csharp",
+				"ckolkman.vscode-postgres"
+			]
+		}
+	}
+}
