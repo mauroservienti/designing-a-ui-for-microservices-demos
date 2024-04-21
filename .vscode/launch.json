@@ -1,0 +1,302 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        //
+        // ASP.Net Core API Gateway - 01
+        //
+        {
+            "name": "01-Catalog.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Core API Gateway - 01/Catalog.Api/bin/Debug/net8.0/Catalog.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Core API Gateway - 01/Catalog.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "01-Sales.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Core API Gateway - 01/Sales.Api/bin/Debug/net8.0/Sales.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Core API Gateway - 01/Sales.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "01-Shipping.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Core API Gateway - 01/Shipping.Api/bin/Debug/net8.0/Shipping.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Core API Gateway - 01/Shipping.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "01-Warehouse.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Core API Gateway - 01/Warehouse.Api/bin/Debug/net8.0/Warehouse.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Core API Gateway - 01/Warehouse.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "01-CompositionGateway",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Core API Gateway - 01/CompositionGateway/bin/Debug/net8.0/CompositionGateway.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Core API Gateway - 01/CompositionGateway",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        //
+        // ASP.Net Core API Gateway - 02
+        //
+        {
+            "name": "02-Catalog.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Core API Gateway - 02/Catalog.Api/bin/Debug/net8.0/Catalog.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Core API Gateway - 02/Catalog.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "02-Sales.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Core API Gateway - 02/Sales.Api/bin/Debug/net8.0/Sales.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Core API Gateway - 02/Sales.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "02-Shipping.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Core API Gateway - 02/Shipping.Api/bin/Debug/net8.0/Shipping.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Core API Gateway - 02/Shipping.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "02-Warehouse.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Core API Gateway - 02/Warehouse.Api/bin/Debug/net8.0/Warehouse.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Core API Gateway - 02/Warehouse.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "02-CompositionGateway",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Core API Gateway - 02/CompositionGateway/bin/Debug/net8.0/CompositionGateway.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Core API Gateway - 02/CompositionGateway",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        //
+        // ASP.Net Mvc Core
+        //
+        {
+            "name": "03-Catalog.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Mvc Core/Catalog.Api/bin/Debug/net8.0/Catalog.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Mvc Core/Catalog.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "03-Sales.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Mvc Core/Sales.Api/bin/Debug/net8.0/Sales.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Mvc Core/Sales.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "03-Shipping.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Mvc Core/Shipping.Api/bin/Debug/net8.0/Shipping.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Mvc Core/Shipping.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "03-Warehouse.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Mvc Core/Warehouse.Api/bin/Debug/net8.0/Warehouse.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Mvc Core/Warehouse.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "03-WebApp",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Mvc Core/WebApp/bin/Debug/net8.0/WebApp.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Mvc Core/WebApp",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+            "launchBrowser": {
+                "enabled": true,
+                "args": "${auto-detect-url}",
+                "windows": {
+                    "command": "cmd.exe",
+                    "args": "/C start ${auto-detect-url}"
+                },
+                "osx": {
+                    "command": "open"
+                },
+                "linux": {
+                    "command": "xdg-open"
+                }
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/ASP.Net Mvc Core/WebApp/Views"
+            }
+        },
+        //
+        // ASP.Net Mvc Core UI Composition
+        //
+        {
+            "name": "04-Catalog.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Mvc Core UI Composition/Catalog.Api/bin/Debug/net8.0/Catalog.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Mvc Core UI Composition/Catalog.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "04-Sales.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Mvc Core UI Composition/Sales.Api/bin/Debug/net8.0/Sales.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Mvc Core UI Composition/Sales.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "04-Shipping.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Mvc Core UI Composition/Shipping.Api/bin/Debug/net8.0/Shipping.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Mvc Core UI Composition/Shipping.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "04-Warehouse.Api",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Mvc Core UI Composition/Warehouse.Api/bin/Debug/net8.0/Warehouse.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Mvc Core UI Composition/Warehouse.Api",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "04-WebApp",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/ASP.Net Mvc Core UI Composition/WebApp/bin/Debug/net8.0/WebApp.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ASP.Net Mvc Core UI Composition/WebApp",
+            "stopAtEntry": false,
+            "console": "integratedTerminal",
+            "launchBrowser": {
+                "enabled": true,
+                "args": "${auto-detect-url}",
+                "windows": {
+                    "command": "cmd.exe",
+                    "args": "/C start ${auto-detect-url}"
+                },
+                "osx": {
+                    "command": "open"
+                },
+                "linux": {
+                    "command": "xdg-open"
+                }
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/ASP.Net Mvc Core UI Composition/WebApp/Views"
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Demo: ASP.Net Core API Gateway - 01",
+            "preLaunchTask": "Build: ASP.Net Core API Gateway - 01",
+            "configurations": [
+                "01-Catalog.Api",
+                "01-Sales.Api", 
+                "01-Shipping.Api", 
+                "01-Warehouse.Api",
+                "01-CompositionGateway"]
+        },
+        {
+            "name": "Demo: ASP.Net Core API Gateway - 02",
+            "preLaunchTask": "Build: ASP.Net Core API Gateway - 02",
+            "configurations": [
+                "02-Catalog.Api",
+                "02-Sales.Api", 
+                "02-Shipping.Api", 
+                "02-Warehouse.Api",
+                "02-CompositionGateway"]
+        },
+        {
+            "name": "Demo: ASP.Net Mvc Core",
+            "preLaunchTask": "Build: ASP.Net Mvc Core",
+            "configurations": [
+                "03-Catalog.Api",
+                "03-Sales.Api", 
+                "03-Shipping.Api", 
+                "03-Warehouse.Api",
+                "03-WebApp"]
+        },
+        {
+            "name": "Demo: ASP.Net Mvc Core UI Composition",
+            "preLaunchTask": "Build: ASP.Net Mvc Core UI Composition",
+            "configurations": [
+                "04-Catalog.Api",
+                "04-Sales.Api", 
+                "04-Shipping.Api", 
+                "04-Warehouse.Api",
+                "04-WebApp"]
+        }
+    ]
+}
