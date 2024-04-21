@@ -1,0 +1,107 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build: ASP.Net Core API Gateway - 01",
+            "command": "dotnet build \"${workspaceFolder}/ASP.Net Core API Gateway - 01/ASP.Net Core API Gateway - 01.sln\"",
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Run tests: ASP.Net Core API Gateway - 01",
+            "command": "dotnet test \"${workspaceFolder}/ASP.Net Core API Gateway - 01/ASP.Net Core API Gateway - 01.sln\"",
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build: ASP.Net Core API Gateway - 02",
+            "command": "dotnet build \"${workspaceFolder}/ASP.Net Core API Gateway - 02/ASP.Net Core API Gateway - 02.sln\"",
+            "type": "shell",
+            "group": "none",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Run tests: ASP.Net Core API Gateway - 02",
+            "command": "dotnet test \"${workspaceFolder}/ASP.Net Core API Gateway - 02/ASP.Net Core API Gateway - 02.sln\"",
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build: ASP.Net Mvc Core",
+            "command": "dotnet build \"${workspaceFolder}/ASP.Net Mvc Core/ASP.Net Mvc Core.sln\"",
+            "type": "shell",
+            "group": "none",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Run tests: ASP.Net Mvc Core",
+            "command": "dotnet test \"${workspaceFolder}/ASP.Net Mvc Core/ASP.Net Mvc Core.sln\"",
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build: ASP.Net Mvc Core UI Composition",
+            "command": "dotnet build \"${workspaceFolder}/ASP.Net Mvc Core UI Composition/ASP.Net Mvc Core UI Composition.sln\"",
+            "type": "shell",
+            "group": "none",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Run tests: ASP.Net Mvc Core UI Composition",
+            "command": "dotnet test \"${workspaceFolder}/ASP.Net Mvc Core UI Composition/ASP.Net Mvc Core UI Composition.sln\"",
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build all solutions",
+            "group": "build",
+            "dependsOn": [
+                "Build: ASP.Net Core API Gateway - 01",
+                "Build: ASP.Net Core API Gateway - 02",
+                "Build: ASP.Net Mvc Core",
+                "Build: ASP.Net Mvc Core UI Composition"
+            ],
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "Run tests for all solutions",
+            "group": "test",
+            "dependsOn": [
+                "Run tests: ASP.Net Core API Gateway - 01",
+                "Run tests: ASP.Net Core API Gateway - 02",
+                "Run tests: ASP.Net Mvc Core",
+                "Run tests: ASP.Net Mvc Core UI Composition"
+            ],
+            "dependsOrder": "sequence"
+        }
+    ]
+}
