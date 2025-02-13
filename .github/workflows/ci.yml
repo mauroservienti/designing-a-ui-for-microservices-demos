@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: ubuntu-20.04
+          - os: ubuntu-latest
             name: Linux
       fail-fast: false
     steps:
