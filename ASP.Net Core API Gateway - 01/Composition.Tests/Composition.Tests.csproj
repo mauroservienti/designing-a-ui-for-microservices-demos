@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.14" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.15" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
         <PackageReference Include="ServiceComposer.AspNetCore.Testing" Version="2.1.0" />
         <PackageReference Include="xunit" Version="2.9.3" />
