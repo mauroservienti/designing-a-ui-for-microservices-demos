@@ -6,8 +6,8 @@
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.16" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="9.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.17" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="9.0.6" />
   </ItemGroup>
 
 </Project>
