@@ -54,7 +54,7 @@ namespace Composition.Tests
                     HttpClient ClientProvider(string name) =>
                         name switch
                         {
-                            var val when val == typeof(Shipping.ViewModelComposition.ProductDetailsGetHandler).FullName => _shippingApiClient,
+                            var val when val == typeof(Shipping.ViewModelComposition.CompositionHandlers.ProductDetailsCompositionHandler).FullName => _shippingApiClient,
                             var val when val == typeof(Warehouse.ViewModelComposition.CompositionHandlers.ProductDetailsCompositionHandler).FullName => _warehouseApiClient,
                             var val when val == typeof(Sales.ViewModelComposition.ProductDetailsGetHandler).FullName => _salesApiClient,
                             var val when val == typeof(Catalog.ViewModelComposition.ProductDetailsGetHandler).FullName => _catalogApiClient,

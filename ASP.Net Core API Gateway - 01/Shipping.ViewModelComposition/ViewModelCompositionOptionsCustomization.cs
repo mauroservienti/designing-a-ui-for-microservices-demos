@@ -3,6 +3,7 @@ using ConfigurationUtils;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ServiceComposer.AspNetCore;
+using Shipping.ViewModelComposition.CompositionHandlers;
 
 namespace Shipping.ViewModelComposition
 {
@@ -10,7 +11,7 @@ namespace Shipping.ViewModelComposition
     {
         public void Customize(ViewModelCompositionOptions options)
         {
-            options.RegisterHttpClient<ProductDetailsGetHandler>((serviceProvider, httpClient) =>
+            options.RegisterHttpClient<ProductDetailsCompositionHandler>((serviceProvider, httpClient) =>
             {
                 var configuration = serviceProvider.GetService<IConfiguration>();
                 var baseAddress = configuration?.GetSection("Shipping:BaseAddress").Value ?? "http://localhost:5004";
