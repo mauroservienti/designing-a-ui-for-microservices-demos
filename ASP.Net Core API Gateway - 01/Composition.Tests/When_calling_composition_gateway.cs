@@ -80,8 +80,9 @@ namespace Composition.Tests
             Assert.Equal("Banana Holder", composedViewModel.ProductName);
             Assert.Equal("Outdoor travel cute banana protector storage box", composedViewModel.ProductDescription);
             Assert.Equal(10, composedViewModel.ProductPrice);
-            Assert.Equal(false, composedViewModel.ProductOutOfStock);
+            
             Assert.Equal("Express Delivery, Regular mail", composedViewModel.ProductShippingOptions);
+            Assert.Equal(false, composedViewModel.ProductOutOfStock);
             Assert.Equal(4, composedViewModel.ProductInventory);
         }
     }
