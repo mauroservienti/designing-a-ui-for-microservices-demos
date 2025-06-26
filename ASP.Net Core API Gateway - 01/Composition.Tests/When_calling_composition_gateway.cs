@@ -72,6 +72,7 @@ namespace Composition.Tests
 
             // Act
             var composedResponse = await compositionClient.GetAsync("/products/details/1");
+            var stringContent = await composedResponse.Content.ReadAsStringAsync();
             dynamic composedViewModel = await composedResponse.Content.AsExpando();
 
             // Assert
