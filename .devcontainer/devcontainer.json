@@ -1,5 +1,5 @@
 {
-	"image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
+	"image": "mcr.microsoft.com/devcontainers/dotnet:10.0",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"customizations": {
 		"vscode": {
