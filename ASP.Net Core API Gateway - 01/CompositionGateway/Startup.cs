@@ -9,9 +9,11 @@ namespace CompositionGateway
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
             services.AddHttpClient();
             services.AddRouting();
             services.AddViewModelComposition();
+            services.AddControllers();
         }
 
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
