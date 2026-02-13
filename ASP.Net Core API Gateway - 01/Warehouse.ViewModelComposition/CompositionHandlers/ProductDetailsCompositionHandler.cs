@@ -7,6 +7,7 @@ using ServiceComposer.AspNetCore;
 
 namespace Warehouse.ViewModelComposition.CompositionHandlers;
 
+[CompositionHandler]
 public class ProductDetailsCompositionHandler(HttpClient client, IHttpContextAccessor httpContextAccessor)
 {
     [HttpGet("/products/details/{id}")]

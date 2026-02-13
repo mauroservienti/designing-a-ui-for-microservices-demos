@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.ViewModelComposition.CompositionHandlers;
 
+[CompositionHandler]
 public class AvailableProductsCompositionHandler(HttpClient httpClient, IHttpContextAccessor httpContextAccessor)
 {
     [HttpGet("/")]

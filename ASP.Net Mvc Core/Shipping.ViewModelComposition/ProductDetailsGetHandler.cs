@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Shipping.ViewModelComposition.CompositionHandlers
 {
+    [CompositionHandler]
     class ProductDetailsCompositionHandler(HttpClient client, IHttpContextAccessor httpContextAccessor)
     {
         [HttpGet("/products/details/{id}")]

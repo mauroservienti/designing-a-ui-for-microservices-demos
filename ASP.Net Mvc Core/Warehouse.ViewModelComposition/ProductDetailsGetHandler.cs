@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Warehouse.ViewModelComposition.CompositionHandlers
 {
+    [CompositionHandler]
     class ProductDetailsCompositionHandler(HttpClient client, IHttpContextAccessor httpContextAccessor) 
     {
         [HttpGet("/products/details/{id}")]
