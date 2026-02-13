@@ -47,7 +47,7 @@ Once the demo content has been reopened in the dev container:
 1. Press `F1`, search for `Run task`, and execute the desired task to build the solution or to build the solution and deploy the required data
 2. Go to the `Run and Debug` VS Code section and select the command you want to execute.
 
-The repository root contains a [request.http](request.http) file listing some test requests. Using VS Code to execute requests can be used by adding the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) that is automatically configured when using Dev Conatainers.
+The repository root contains a [request.http](request.http) file listing some test requests. Using VS Code to execute requests can be used by adding the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) that is automatically configured when using Dev Containers.
 
 ## ASP.Net Core API Gateway - 01
 
@@ -339,4 +339,4 @@ To simplify the sample as much as possible, frontend applications, such as `Comp
 
 ### Disclaimer
 
-This demo is built using [NServiceBus Sagas](https://docs.particular.net/nservicebus/sagas/); I work for [Particular Software](https://particular.net/), the makers of NServiceBus.
+These demos are built using [ServiceComposer.AspNetCore](https://github.com/ServiceComposer/ServiceComposer.AspNetCore), a ViewModel Composition library I created. I work for [Particular Software](https://particular.net/), the makers of [NServiceBus](https://particular.net/nservicebus).
