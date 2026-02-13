@@ -9,7 +9,7 @@ namespace Catalog.ViewModelComposition
     {
         public void Customize(ViewModelCompositionOptions options)
         {
-            options.RegisterHttpClient<ProductDetailsGetHandler>("http://localhost:5002");
+            options.RegisterHttpClient<CompositionHandlers.ProductDetailsCompositionHandler>("http://localhost:5002");
         }
     }
 }
