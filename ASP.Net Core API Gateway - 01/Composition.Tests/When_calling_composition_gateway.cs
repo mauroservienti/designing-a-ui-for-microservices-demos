@@ -54,10 +54,10 @@ namespace Composition.Tests
                     HttpClient ClientProvider(string name) =>
                         name switch
                         {
-                            var val when val == typeof(Shipping.ViewModelComposition.ProductDetailsGetHandler).FullName => _shippingApiClient,
-                            var val when val == typeof(Warehouse.ViewModelComposition.ProductDetailsGetHandler).FullName => _warehouseApiClient,
-                            var val when val == typeof(Sales.ViewModelComposition.ProductDetailsGetHandler).FullName => _salesApiClient,
-                            var val when val == typeof(Catalog.ViewModelComposition.ProductDetailsGetHandler).FullName => _catalogApiClient,
+                            var val when val == typeof(Shipping.ViewModelComposition.CompositionHandlers.ProductDetailsCompositionHandler).FullName => _shippingApiClient,
+                            var val when val == typeof(Warehouse.ViewModelComposition.CompositionHandlers.ProductDetailsCompositionHandler).FullName => _warehouseApiClient,
+                            var val when val == typeof(Sales.ViewModelComposition.CompositionHandlers.ProductDetailsCompositionHandler).FullName => _salesApiClient,
+                            var val when val == typeof(Catalog.ViewModelComposition.CompositionHandlers.ProductDetailsCompositionHandler).FullName => _catalogApiClient,
                             _ => throw new NotSupportedException($"Missing HTTP client for {name}")
                         };
 
@@ -72,6 +72,7 @@ namespace Composition.Tests
 
             // Act
             var composedResponse = await compositionClient.GetAsync("/products/details/1");
+            var stringContent = await composedResponse.Content.ReadAsStringAsync();
             dynamic composedViewModel = await composedResponse.Content.AsExpando();
 
             // Assert

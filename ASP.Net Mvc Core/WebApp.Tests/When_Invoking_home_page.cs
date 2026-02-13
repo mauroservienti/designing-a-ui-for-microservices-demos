@@ -52,20 +52,20 @@ namespace WebApp.Tests
         public async Task Should_render_available_products()
         {
             // Arrange
-            var webApp = new WebApplicationFactoryWithWebHost<WebApp.Startup>
+            var webApp = new WebApplicationFactoryWithWebHost<Startup>
             {
                 BuilderCustomization = builder =>
                 {
                     HttpClient ClientProvider(string name) =>
                         name switch
                         {
-                            var val when val == typeof(Shipping.ViewModelComposition.ProductDetailsGetHandler).FullName => _shippingApiClient,
-                            var val when val == typeof(Warehouse.ViewModelComposition.ProductDetailsGetHandler).FullName => _warehouseApiClient,
+                            var val when val == typeof(Shipping.ViewModelComposition.CompositionHandlers.ProductDetailsCompositionHandler).FullName => _shippingApiClient,
+                            var val when val == typeof(Warehouse.ViewModelComposition.CompositionHandlers.ProductDetailsCompositionHandler).FullName => _warehouseApiClient,
                             var val when val == typeof(Warehouse.ViewModelComposition.AvailableProductsLoadedSubscriber).FullName => _warehouseApiClient,
-                            var val when val == typeof(Sales.ViewModelComposition.ProductDetailsGetHandler).FullName => _salesApiClient,
+                            var val when val == typeof(Sales.ViewModelComposition.CompositionHandlers.ProductDetailsCompositionHandler).FullName => _salesApiClient,
                             var val when val == typeof(Sales.ViewModelComposition.AvailableProductsLoadedSubscriber).FullName => _salesApiClient,
-                            var val when val == typeof(Catalog.ViewModelComposition.ProductDetailsGetHandler).FullName => _catalogApiClient,
-                            var val when val == typeof(Catalog.ViewModelComposition.AvailableProductsGetHandler).FullName => _catalogApiClient,
+                            var val when val == typeof(Catalog.ViewModelComposition.CompositionHandlers.ProductDetailsCompositionHandler).FullName => _catalogApiClient,
+                            var val when val == typeof(Catalog.ViewModelComposition.CompositionHandlers.AvailableProductsCompositionHandler).FullName => _catalogApiClient,
                             var val when val == typeof(Catalog.ViewModelComposition.AvailableProductsLoadedSubscriber).FullName => _catalogApiClient,
                             _ => throw new NotSupportedException($"Missing HTTP client for {name}")
                         };
@@ -86,8 +86,8 @@ namespace WebApp.Tests
             Assert.True(homeResponse.IsSuccessStatusCode);
             Approvals.Verify(result, received =>
             {
-                var begin = received.LastIndexOf("site.js?v=") + 10;
-                var end = received.LastIndexOf("\"></script>");
+                var begin = received.LastIndexOf("site.js?v=", StringComparison.OrdinalIgnoreCase) + 10;
+                var end = received.LastIndexOf("\"></script>", StringComparison.OrdinalIgnoreCase);
 
                 return $"{received.Substring(0,begin)}|version-scrubbed|{received.Substring(end)}";
             });

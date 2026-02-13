@@ -1,7 +1,6 @@
-﻿using System;
-using ConfigurationUtils;
-using Microsoft.Extensions.DependencyInjection;
+﻿using ConfigurationUtils;
 using ServiceComposer.AspNetCore;
+using Warehouse.ViewModelComposition.CompositionHandlers;
 
 namespace Warehouse.ViewModelComposition
 {
@@ -9,7 +8,7 @@ namespace Warehouse.ViewModelComposition
     {
         public void Customize(ViewModelCompositionOptions options)
         {
-            options.RegisterHttpClient<ProductDetailsGetHandler>("http://localhost:5003");
+            options.RegisterHttpClient<ProductDetailsCompositionHandler>("http://localhost:5003");
         }
     }
 }

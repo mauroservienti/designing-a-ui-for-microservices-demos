@@ -1,40 +1,29 @@
-﻿using JsonUtils;
+using JsonUtils;
 using Catalog.ViewModelComposition.Events;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
 using ServiceComposer.AspNetCore;
 using System;
 using System.Net.Http;
-using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace Sales.ViewModelComposition
 {
-    class AvailableProductsLoadedSubscriber : ICompositionEventsSubscriber
+    public class AvailableProductsLoadedSubscriber(IHttpClientFactory httpClientFactory) : ICompositionEventsHandler<AvailableProductsLoaded>
     {
-        private readonly HttpClient _httpClient;
-
-        public AvailableProductsLoadedSubscriber(HttpClient httpClient)
+        public async Task Handle(AvailableProductsLoaded @event, HttpRequest request)
         {
-            _httpClient = httpClient;
-        }
+            var ids = string.Join(",", @event.AvailableProductsViewModel.Keys);
 
-        [HttpGet("/")]
-        public void Subscribe(ICompositionEventsPublisher publisher)
-        {
-            publisher.Subscribe<AvailableProductsLoaded>(async (@event, request) =>
+            var url = $"/api/prices/products/{ids}";
+            var httpClient = httpClientFactory.CreateClient(typeof(AvailableProductsLoadedSubscriber).FullName!);
+            var response = await httpClient.GetAsync(url);
+
+            dynamic[] productPrices = await response.Content.AsExpandoArray();
+
+            foreach (dynamic productPrice in productPrices)
             {
-                var ids = String.Join(",", @event.AvailableProductsViewModel.Keys);
-
-                var url = $"/api/prices/products/{ids}";
-                var response = await _httpClient.GetAsync(url);
-
-                dynamic[] productPrices = await response.Content.AsExpandoArray();
-
-                foreach (dynamic productPrice in productPrices)
-                {
-                    @event.AvailableProductsViewModel[(int)productPrice.Id].ProductPrice = productPrice.Price;
-                }
-            });
+                @event.AvailableProductsViewModel[(int)productPrice.Id].ProductPrice = productPrice.Price;
+            }
         }
     }
 }

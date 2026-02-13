@@ -10,7 +10,7 @@ namespace Warehouse.ViewModelComposition
         private static string baseAddress = "http://localhost:5003";
         public void Customize(ViewModelCompositionOptions options)
         {
-            options.RegisterHttpClient<ProductDetailsGetHandler>(baseAddress);
+            options.RegisterHttpClient<CompositionHandlers.ProductDetailsCompositionHandler>(baseAddress);
             options.RegisterHttpClient<AvailableProductsLoadedSubscriber>(baseAddress);
         }
     }
