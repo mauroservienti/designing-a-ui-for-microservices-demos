@@ -11,7 +11,7 @@ namespace Sales.ViewModelComposition
 
         public void Customize(ViewModelCompositionOptions options)
         {
-            options.RegisterHttpClient<ProductDetailsGetHandler>(baseAddress);
+            options.RegisterHttpClient<CompositionHandlers.ProductDetailsCompositionHandler>(baseAddress);
             options.RegisterHttpClient<AvailableProductsLoadedSubscriber>(baseAddress);
         }
     }
