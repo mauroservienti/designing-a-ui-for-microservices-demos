@@ -12,7 +12,7 @@ namespace Catalog.ViewModelComposition
         public void Customize(ViewModelCompositionOptions options)
         {
             options.RegisterHttpClient<ProductDetailsGetHandler>(baseAddress);
-            options.RegisterHttpClient<AvailableProductsGetHandler>(baseAddress);
+            options.RegisterHttpClient<CompositionHandlers.AvailableProductsCompositionHandler>(baseAddress);
             options.RegisterHttpClient<AvailableProductsLoadedSubscriber>(baseAddress);
         }
     }

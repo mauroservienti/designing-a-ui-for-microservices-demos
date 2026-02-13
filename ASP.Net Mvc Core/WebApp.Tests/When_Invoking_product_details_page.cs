@@ -65,7 +65,7 @@ namespace WebApp.Tests
                             var val when val == typeof(Sales.ViewModelComposition.ProductDetailsGetHandler).FullName => _salesApiClient,
                             var val when val == typeof(Sales.ViewModelComposition.AvailableProductsLoadedSubscriber).FullName => _salesApiClient,
                             var val when val == typeof(Catalog.ViewModelComposition.ProductDetailsGetHandler).FullName => _catalogApiClient,
-                            var val when val == typeof(Catalog.ViewModelComposition.AvailableProductsGetHandler).FullName => _catalogApiClient,
+                            var val when val == typeof(Catalog.ViewModelComposition.CompositionHandlers.AvailableProductsCompositionHandler).FullName => _catalogApiClient,
                             var val when val == typeof(Catalog.ViewModelComposition.AvailableProductsLoadedSubscriber).FullName => _catalogApiClient,
                             _ => throw new NotSupportedException($"Missing HTTP client for {name}")
                         };
