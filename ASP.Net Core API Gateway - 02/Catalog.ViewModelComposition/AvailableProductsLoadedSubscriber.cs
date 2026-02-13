@@ -1,39 +1,29 @@
-﻿using JsonUtils;
+using JsonUtils;
 using Catalog.ViewModelComposition.Events;
 using ServiceComposer.AspNetCore;
-using System;
 using System.Net.Http;
-using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace Catalog.ViewModelComposition
 {
-    class AvailableProductsLoadedSubscriber : ICompositionEventsSubscriber
+    public class AvailableProductsLoadedSubscriber(IHttpClientFactory httpClientFactory) : ICompositionEventsHandler<AvailableProductsLoaded>
     {
-        private readonly HttpClient _httpClient;
-
-        public AvailableProductsLoadedSubscriber(HttpClient httpClient)
+        public async Task Handle(AvailableProductsLoaded @event, HttpRequest request)
         {
-            _httpClient = httpClient;
-        }
+            var ids = string.Join(",", @event.AvailableProductsViewModel.Keys);
 
-        [HttpGet("/available/products")]
-        public void Subscribe(ICompositionEventsPublisher publisher)
-        {
-            publisher.Subscribe<AvailableProductsLoaded>(async (@event, request) =>
+            var url = $"/api/product-details/products/{ids}";
+            var httpClient = httpClientFactory.CreateClient(typeof(AvailableProductsLoadedSubscriber).FullName!);
+            var response = await httpClient.GetAsync(url);
+
+            dynamic[] productDetails = await response.Content.AsExpandoArray();
+
+            foreach (dynamic detail in productDetails)
             {
-                var ids = string.Join(",", @event.AvailableProductsViewModel.Keys);
-
-                var url = $"/api/product-details/products/{ids}";
-                var response = await _httpClient.GetAsync(url);
-
-                dynamic[] productDetails = await response.Content.AsExpandoArray();
-
-                foreach (dynamic detail in productDetails)
-                {
-                    @event.AvailableProductsViewModel[(int)detail.Id].ProductName = detail.Name;
-                    @event.AvailableProductsViewModel[(int)detail.Id].ProductDescription = detail.Description;
-                }
-            });
+                @event.AvailableProductsViewModel[(int)detail.Id].ProductName = detail.Name;
+                @event.AvailableProductsViewModel[(int)detail.Id].ProductDescription = detail.Description;
+            }
         }
     }
 }
