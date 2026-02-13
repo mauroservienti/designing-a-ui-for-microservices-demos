@@ -6,24 +6,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using ServiceComposer.AspNetCore;
 
-namespace Catalog.ViewModelComposition
+namespace Catalog.ViewModelComposition.CompositionHandlers
 {
-    class ProductDetailsGetHandler : ICompositionRequestsHandler
+    class ProductDetailsCompositionHandler(HttpClient client, IHttpContextAccessor httpContextAccessor) 
     {
-        private readonly HttpClient _httpClient;
-
-        public ProductDetailsGetHandler(HttpClient httpClient)
-        {
-            _httpClient = httpClient;
-        }
-
         [HttpGet("/products/details/{id}")]
-        public async Task Handle(HttpRequest request)
+        public async Task Handle()
         {
+            var request = httpContextAccessor.HttpContext!.Request;
             var id = (string)request.HttpContext.GetRouteData().Values["id"];
 
             var url = $"/api/product-details/product/{id}";
-            var response = await _httpClient.GetAsync(url);
+            var response = await client.GetAsync(url);
 
             dynamic details = await response.Content.AsExpando();
 
