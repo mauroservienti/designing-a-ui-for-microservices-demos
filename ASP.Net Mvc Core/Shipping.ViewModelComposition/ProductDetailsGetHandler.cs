@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
 using ServiceComposer.AspNetCore;
 using JsonUtils;
 using System.Collections.Generic;
@@ -8,24 +7,18 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Shipping.ViewModelComposition
+namespace Shipping.ViewModelComposition.CompositionHandlers
 {
-    class ProductDetailsGetHandler : ICompositionRequestsHandler
+    [CompositionHandler]
+    class ProductDetailsCompositionHandler(HttpClient client, IHttpContextAccessor httpContextAccessor)
     {
-        private readonly HttpClient _client;
-
-        public ProductDetailsGetHandler(HttpClient client)
-        {
-            _client = client;
-        }
-
         [HttpGet("/products/details/{id}")]
-        public async Task Handle(HttpRequest request)
+        public async Task Handle(string id)
         {
-            var id = (string)request.HttpContext.GetRouteData().Values["id"];
+            var request = httpContextAccessor.HttpContext!.Request;
 
             var url = $"/api/shipping-options/product/{id}";
-            var response = await _client.GetAsync(url);
+            var response = await client.GetAsync(url);
 
             dynamic productShippingOptions = await response.Content.AsExpando();
 

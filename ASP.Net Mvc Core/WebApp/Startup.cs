@@ -12,6 +12,7 @@ namespace WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRouting();
+            services.AddHttpContextAccessor();
             services.AddControllersWithViews();
             services.AddViewModelComposition(options=>
             {

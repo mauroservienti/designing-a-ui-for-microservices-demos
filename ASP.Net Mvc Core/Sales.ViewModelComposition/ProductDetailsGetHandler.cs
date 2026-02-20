@@ -1,28 +1,22 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
 using ServiceComposer.AspNetCore;
 using System.Net.Http;
 using System.Threading.Tasks;
 using JsonUtils;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Sales.ViewModelComposition
+namespace Sales.ViewModelComposition.CompositionHandlers
 {
-    class ProductDetailsGetHandler : ICompositionRequestsHandler
+    [CompositionHandler]
+    class ProductDetailsCompositionHandler(HttpClient httpClient, IHttpContextAccessor httpContextAccessor)
     {
-        private readonly HttpClient _httpClient;
-
-        public ProductDetailsGetHandler(HttpClient httpClient)
-        {
-            _httpClient = httpClient;
-        }
         [HttpGet("/products/details/{id}")]
-        public async Task Handle(HttpRequest request)
+        public async Task Handle(string id)
         {
-            var id = (string)request.HttpContext.GetRouteData().Values["id"];
+            var request = httpContextAccessor.HttpContext!.Request;
 
             var url = $"/api/prices/product/{id}";
-            var response = await _httpClient.GetAsync(url);
+            var response = await httpClient.GetAsync(url);
 
             dynamic productPrice = await response.Content.AsExpando();
 

@@ -9,22 +9,18 @@ using System.Threading.Tasks;
 using JsonUtils;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Catalog.ViewModelComposition
+namespace Catalog.ViewModelComposition.CompositionHandlers
 {
-    class AvailableProductsGetHandler : ICompositionRequestsHandler
+    [CompositionHandler]
+    class AvailableProductsCompositionHandler(HttpClient httpClient, IHttpContextAccessor httpContextAccessor)
     {
-        private readonly HttpClient _httpClient;
-
-        public AvailableProductsGetHandler(HttpClient httpClient)
-        {
-            _httpClient = httpClient;
-        }
-
         [HttpGet("/")]
-        public async Task Handle(HttpRequest request)
+        public async Task Handle()
         {
+            var request = httpContextAccessor.HttpContext!.Request;
+
             var url = $"/api/available/products";
-            var response = await _httpClient.GetAsync(url);
+            var response = await httpClient.GetAsync(url);
 
             var availableProducts = await response.Content.As<int[]>();
             var availableProductsViewModel = MapToDictionary(availableProducts);
@@ -39,7 +35,7 @@ namespace Catalog.ViewModelComposition
             vm.AvailableProducts = availableProductsViewModel.Values.ToList();
         }
 
-        IDictionary<int, dynamic> MapToDictionary(IEnumerable<int> availableProducts)
+        static IDictionary<int, dynamic> MapToDictionary(IEnumerable<int> availableProducts)
         {
             var availableProductsViewModel = new Dictionary<int, dynamic>();
 

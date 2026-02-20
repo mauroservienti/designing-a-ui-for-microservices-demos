@@ -13,6 +13,7 @@ namespace WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRouting();
+            services.AddHttpContextAccessor();
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation()
                 .AddUIComposition();

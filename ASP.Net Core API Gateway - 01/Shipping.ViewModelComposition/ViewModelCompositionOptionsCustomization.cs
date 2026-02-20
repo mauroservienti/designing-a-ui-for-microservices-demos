@@ -10,7 +10,7 @@ namespace Shipping.ViewModelComposition
     {
         public void Customize(ViewModelCompositionOptions options)
         {
-            options.RegisterHttpClient<ProductDetailsGetHandler>((serviceProvider, httpClient) =>
+            options.RegisterHttpClient<CompositionHandlers.ProductDetailsCompositionHandler>((serviceProvider, httpClient) =>
             {
                 var configuration = serviceProvider.GetService<IConfiguration>();
                 var baseAddress = configuration?.GetSection("Shipping:BaseAddress").Value ?? "http://localhost:5004";

@@ -10,6 +10,7 @@ namespace CompositionGateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpClient();
+            services.AddHttpContextAccessor();
             services.AddRouting();
             services.AddViewModelComposition();
         }
