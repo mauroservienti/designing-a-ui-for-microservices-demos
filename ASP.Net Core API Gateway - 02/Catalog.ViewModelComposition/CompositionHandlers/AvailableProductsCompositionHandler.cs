@@ -34,7 +34,7 @@ public class AvailableProductsCompositionHandler(HttpClient httpClient, IHttpCon
         vm.AvailableProducts = availableProductsViewModel.Values.ToList();
     }
 
-    IDictionary<int, dynamic> MapToDictionary(IEnumerable<int> availableProducts)
+    static IDictionary<int, dynamic> MapToDictionary(IEnumerable<int> availableProducts)
     {
         var availableProductsViewModel = new Dictionary<int, dynamic>();
 
