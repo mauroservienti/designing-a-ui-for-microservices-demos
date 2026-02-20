@@ -18,7 +18,7 @@ public class ProductDetailsCompositionHandler(HttpClient client, IHttpContextAcc
 
         dynamic stockItem = await response.Content.AsExpando();
 
-        dynamic vm = httpContextAccessor.HttpContext.Request.GetComposedResponseModel();
+        dynamic vm = httpContextAccessor.HttpContext!.Request.GetComposedResponseModel();
         vm.ProductInventory = stockItem.Inventory;
         vm.ProductOutOfStock = stockItem.Inventory == 0;
     }

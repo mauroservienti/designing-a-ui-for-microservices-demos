@@ -24,7 +24,7 @@ public class ProductDetailsCompositionHandler(HttpClient client, IHttpContextAcc
             .Select(o => o.Option)
             .ToArray();
 
-        var vm = httpContextAccessor.HttpContext.Request.GetComposedResponseModel();
+        var vm = httpContextAccessor.HttpContext!.Request.GetComposedResponseModel();
         vm.ProductShippingOptions = string.Join(", ", options);
     }
 }
