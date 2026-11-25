@@ -14,10 +14,7 @@ namespace WebApp
             services.AddHttpContextAccessor();
             services.AddRouting();
             services.AddControllersWithViews();
-            services.AddViewModelComposition(options=>
-            {
-                options.EnableCompositionOverControllers();
-            });
+            services.AddViewModelComposition();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
@@ -35,7 +32,7 @@ namespace WebApp
             app.UseStaticFiles();
             app.UseEndpoints(builder =>
             {
-                builder.MapControllers();
+                builder.MapControllers().WithCompositionOverControllers();
                 builder.MapCompositionHandlers();
             });
         }
